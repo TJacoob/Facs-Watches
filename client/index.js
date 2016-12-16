@@ -1,2 +1,4 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor'
+
+/* Receiving Products list from server */
+Meteor.subscribe('products');
