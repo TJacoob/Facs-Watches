@@ -1,5 +1,10 @@
 <template name="AdminSingleProductFull">
-	<h1>Single Product Full Pageas</h1>
-	<h3>{{singleProduct.name}}</h3>
-	<p>{{singleProduct.desc}}</p>
+	<h1>Single Product Full Page</h1>
+	<i class="fa fa-pencil"></i>
+	{{#if $.Session.get 'editMode'}}
+		{{> quickForm collection="Products" id=updateProductId type="update" doc=singleProduct autosave=true}}
+	{{else}}
+		<h3>{{singleProduct.name}}</h3>
+		<p>{{singleProduct.desc}}</p>
+	{{/if}}
 </template>
