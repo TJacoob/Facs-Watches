@@ -37,9 +37,3 @@ Images = new FilesCollection({
     }
   }*/
 });
-
-if (Meteor.isServer) {
-  Meteor.publish('files.images.all', function () {
-    return Images.find().cursor;
-  });
-}
