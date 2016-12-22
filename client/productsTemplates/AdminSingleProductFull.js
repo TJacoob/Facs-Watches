@@ -5,7 +5,7 @@ Template.AdminSingleProductFull.onCreated(function() {
 	self.autorun(function(){
 		var id = FlowRouter.getParam('id');
 		self.subscribe('singleProduct', id);
-		self.subscribe('files.images.all');
+		self.subscribe('singleImage', id);
 	});
 });
 
@@ -19,10 +19,10 @@ Template.AdminSingleProductFull.helpers({
 		return id ;
 	},
 	productImage: function(){
+		console.log("Call");
 		var id = FlowRouter.getParam('id');
 		var prod = Products.findOne({_id: id});
 		return Images.findOne({_id:prod.picture});
-		//return Images.findOne();
 	}
 
 });

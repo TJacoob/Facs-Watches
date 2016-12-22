@@ -17,7 +17,8 @@ Meteor.publish('files.images.all', function () {
 
 Meteor.publish('singleImage', function(id){
 	check(id, String);
-	return Images.find({_id:id});
+  var p = Products.findOne({_id: id});
+	return Images.find({_id:p.picture}).cursor;
 });
 
 /* Search Testing */
