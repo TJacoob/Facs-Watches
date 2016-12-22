@@ -1,7 +1,7 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
 Images = new FilesCollection({
-  storagePath: '.meteor/local/build/programs/server',
+  storagePath: Meteor.absolutePath + '/data',   // CHECK IF IT WORKS AFTER DEPLOYMENT
   downloadRoute: '/files/images',
   collectionName: 'Images',
   chunkSize: 1024*2048,

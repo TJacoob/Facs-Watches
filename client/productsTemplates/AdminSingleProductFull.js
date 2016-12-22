@@ -19,7 +19,6 @@ Template.AdminSingleProductFull.helpers({
 		return id ;
 	},
 	productImage: function(){
-		console.log("Call");
 		var id = FlowRouter.getParam('id');
 		var prod = Products.findOne({_id: id});
 		return Images.findOne({_id:prod.picture});
