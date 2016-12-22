@@ -22,7 +22,18 @@ ProductsSchema = new SimpleSchema({
 	desc: {
 		type: String,
 		label: "Description"
-	}
+	},
+	picture: {
+	    type: String,
+	    autoform: {
+		    afFieldInput: {
+		        type: 'fileUpload',
+		        collection: 'Images',
+		        //uploadTemplate: 'uploadField' // <- Optional
+		        //previewTemplate: 'uploadPreview' // <- Optional
+		    }
+	    }
+  	}
 });
 
 Products.attachSchema( ProductsSchema );
