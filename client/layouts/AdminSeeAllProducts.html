@@ -13,8 +13,11 @@
 
 <template name="AdminSeeAllProducts">
 	<h1>All Products</h1>
+	<input type="text" id="search-box" placeholder="Search Products" />
 	<table class="table table-hover">
-		{{#if Template.subscriptionsReady}}
+		{{#if isLoading}}
+			<p>Loading</p>
+		{{else}}
 			<thead>
 				<th class="col-md-7">1</th>
 				<th class="col-md-3	">2</th>
@@ -23,10 +26,10 @@
 				{{#each products}}
 					<tr>
 						<th class="col-md-7">
-							{{name}}
+							{{{name}}}
 						</th>
 						<td class="col-md-3">
-							{{brand}}
+							{{{brand}}}
 						</td>				
 						<td class="col-md-2 text-md-right">
 							<a class="no-padding" href="/admin/product/{{_id}}">
@@ -42,8 +45,6 @@
 					</tr>
 				{{/each}}
 			</tbody>
-		{{else}}
-			<p>Loading</p>
 		{{/if}}
 	</table>
 </template>
