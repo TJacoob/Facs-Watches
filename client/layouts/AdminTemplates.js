@@ -30,3 +30,16 @@ Template.AdminAddProduct.rendered = function(){
     element = $("#navbarOp3");    
     element.removeClass("active");
 }
+
+Template.AdminSeeAllProducts.onCreated(function() {
+    var self = this;
+    self.autorun(function(){
+        self.subscribe('products');
+    });
+});
+
+Template.AdminSeeAllProducts.helpers({
+    products: ()=> {
+        return Products.find();
+    }
+});

@@ -31,3 +31,12 @@ Template.AdminSingleProductFull.events({
 		Session.set('editMode', !Session.get('editMode'))
 	}
 });
+
+Template.AdminSeeAllProducts.events({
+	'click .fa-pencil' : function(){
+		Session.set('editMode', !Session.get('editMode'))
+	},
+	'click .fa-search' : function(){
+		Session.set('editMode', false )
+	}
+});
