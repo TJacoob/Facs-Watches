@@ -1,6 +1,7 @@
 <template name="AdminSingleProductFull">
 	<h1>Single Product Full Page</h1>
-	<i class="fa fa-pencil"></i>
+	<a href="/admin/product/all"><i class="fa fa-arrow-left"></i></a>
+	<i class="fa fa-pencil"></i>	
 	{{#if Template.subscriptionsReady }}
 		{{#if $.Session.get 'editMode'}}
 			{{> quickForm collection="Products" id=updateProductId type="update" doc=singleProduct autosave=true}}
