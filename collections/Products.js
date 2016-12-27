@@ -3,11 +3,6 @@ import { Meteor } from 'meteor/meteor'
 
 Products = new Mongo.Collection('products');
 
-/* Indexes the Collection for searches */
-if ( Meteor.isServer ) {
-  Products._ensureIndex( { name: 1, desc: 0, brand: 0, picture: 0} );
-}
-
 /* Allows clients to add entries */
 Products.allow({
 	insert: function(){

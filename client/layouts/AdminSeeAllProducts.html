@@ -16,17 +16,17 @@
 	<table class="table table-hover">
 		{{#if Template.subscriptionsReady}}
 			<thead>
-				<th class="col-md-3">1</th>
-				<th class="col-md-7">2</th>
+				<th class="col-md-7">1</th>
+				<th class="col-md-3	">2</th>
 			</thead>
 			<tbody>
 				{{#each products}}
 					<tr>
-						<th class="col-md-3">
-							{{_id}}
-						</th>
-						<td class="col-md-7">
+						<th class="col-md-7">
 							{{name}}
+						</th>
+						<td class="col-md-3">
+							{{brand}}
 						</td>				
 						<td class="col-md-2 text-md-right">
 							<a class="no-padding" href="/admin/product/{{_id}}">
