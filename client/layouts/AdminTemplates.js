@@ -60,3 +60,5 @@ Template.AdminSeeAllProducts.events({
     PackageSearch.search(text);
   }, 200)
 });
+
+

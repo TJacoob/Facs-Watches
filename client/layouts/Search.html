@@ -1,0 +1,98 @@
+<template name="searchTest">
+	<!--<h1>All Products</h1>
+	<input type="text" id="search-box" placeholder="Search Products" />
+	<table class="table table-hover">
+		{{#if isLoading}}
+			<p>Loading</p>
+		{{else}}
+			<thead>
+				<th class="col-md-7">1</th>
+				<th class="col-md-3	">2</th>
+			</thead>
+			<tbody>
+				{{#each products}}
+					<tr>
+						<th class="col-md-7">
+							{{{name}}}
+						</th>
+						<td class="col-md-3">
+							{{{brand}}}
+						</td>				
+						<td class="col-md-2 text-md-right">
+							<a class="no-padding" href="/admin/product/{{_id}}">
+								<i class="fa fa-search-plus fa-fw"></i>
+							</a>
+							<a class="hidden-md-down no-padding" href="/admin/product/{{_id}}">
+								<i class="fa fa-pencil fa-fw"></i>
+							</a>
+							<a class="hidden-md-down no-padding" href="#">
+								<i class="fa fa-trash fa-fw"></i>
+							</a>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		{{/if}}
+	</table>-->
+
+	<hr>
+
+	<h2>Filtrando</h2>
+	{{#if Template.subscriptionsReady}}
+		{{> reactiveTable collection=products settings=settings}}
+		{{> reactiveTableFilter id="myFilter" label="Filter" }}
+	{{/if}}
+	
+
+</template>
+
+
+<template name="searchdev">
+	{{> control}}
+	<hr>
+	{{> show}}
+</template>
+
+<template name="show">
+	<table class="table table-hover">
+		{{#if Template.subscriptionsReady}}
+			<thead>
+				<th class="col-md-7">1</th>
+				<th class="col-md-3	">2</th>
+			</thead>
+			<tbody>
+				{{#each productsV3}}
+					<tr>
+						<th class="col-md-7">
+							{{{name}}}
+						</th>
+						<td class="col-md-3">
+							{{{brand}}}
+						</td>				
+						<td class="col-md-2 text-md-right">
+							<a class="no-padding" href="/admin/product/{{_id}}">
+								<i class="fa fa-search-plus fa-fw"></i>
+							</a>
+							<a class="hidden-md-down no-padding" href="/admin/product/{{_id}}">
+								<i class="fa fa-pencil fa-fw"></i>
+							</a>
+							<a class="hidden-md-down no-padding" href="#">
+								<i class="fa fa-trash fa-fw"></i>
+							</a>
+						</td>
+					</tr>
+				{{/each}}
+			</tbody>
+		{{else}}
+			<p>Loading</p>	
+		{{/if}}
+	</table>
+</template>
+
+<template name="control">
+	{{#each brands}}
+	<label class="form-check-inline">
+	  	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="searchOp" value="{{this}}"> {{this}}
+	</label>
+	{{/each}}
+</template> 
