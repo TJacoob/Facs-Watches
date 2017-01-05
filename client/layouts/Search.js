@@ -2,8 +2,8 @@ var options = {
   keepHistory: 1000 * 60 * 5,
   localSearch: true
 };
-var fields = ['name', 'brand'];
-var filter = {name:"", brand:[]};
+var fields = ['name', 'brand','type'];
+var filter = {name:"", brand:[], type:[]};
 
 PackageSearch = new SearchSource('products', fields, options);
 
@@ -11,8 +11,13 @@ Template.search.onCreated(function() {
     var self = this;
     self.autorun(function(){
         self.subscribe('products');
+        filter.brand = distinct(Products,"brand");
+    	filter.type = distinct(Products,"type");
     });
-    PackageSearch.search("");
+
+    
+    
+    PackageSearch.search("",filter);
 });
 
 Template.search.helpers({
@@ -31,25 +36,81 @@ Template.search.helpers({
 
   brands: function() {
   	return distinct(Products,"brand");
+  },
+  types: function() {
+  	return distinct(Products,"type");
   }
 });
+
+var empty = true ;
+var emptyType = true ;
 
 Template.search.events({
   "keyup #search-box": _.throttle(function(e) {
     var text = $(e.target).val().trim();
     filter.name = text ;
-    PackageSearch.search("Anything", filter);
+    PackageSearch.search("-", filter);
   }, 200),
   "click #searchOP": function(){
-  	
-  	if (filter.brand.indexOf(this.valueOf()) > -1) {
+
+  	if ((filter.brand.indexOf(this.valueOf()) > -1)&&(!empty) ) {
     //In the array!
+
     	filter.brand = deleteFrom(filter.brand, this.valueOf());
+    	if ( filter.brand.length == 0 )
+    	{
+    		empty = true ;
+    	}
+    }
+    else if ((filter.brand.indexOf(this.valueOf()) > -1)&&(empty) ){
+		filter.brand = [] ;
+		filter.brand.push(this.valueOf());
+		empty = false;	
 	} else {
     	filter.brand.push(this.valueOf());
+    	empty=false ;
 	}
-  	PackageSearch.search("Anything", filter);
+
+  	if (empty)
+	{
+		for (i=0; i<distinct(Products,"brand").length ; i++ )
+  		{
+    		filter.brand.push(distinct(Products,"brand")[i]);
+  		}
+  		empty = true ;
+	}
+  	PackageSearch.search("-", filter);
   },
+  "click #searchOPType": function(){
+
+  	if ((filter.type.indexOf(this.valueOf()) > -1)&&(!emptyType) ) {
+    //In the array!
+
+    	filter.type = deleteFrom(filter.type, this.valueOf());
+    	if ( filter.type.length == 0 )
+    	{
+    		emptyType = true ;
+    	}
+    }
+    else if ((filter.type.indexOf(this.valueOf()) > -1)&&(emptyType) ){
+		filter.type = [] ;
+		filter.type.push(this.valueOf());
+		emptyType = false;	
+	} else {
+    	filter.type.push(this.valueOf());
+    	emptyType = false ;
+	}
+
+  	if (emptyType)
+	{
+		for (i=0; i<distinct(Products,"type").length ; i++ )
+  		{
+    		filter.type.push(distinct(Products,"type")[i]);
+  		}
+  		emptyType = true ;
+	}
+  	PackageSearch.search("-", filter);
+  }
 });
 
 function distinct(collection, field) {

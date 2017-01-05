@@ -7,18 +7,26 @@
 			<p>Loading</p>
 		{{else}}
 			<thead>
-				<th class="col-md-9">1</th>
-				<th class="col-md-3	">2</th>
+				<th class="col-md-3">1</th>
+				<th class="col-md-3">2</th>
+				<th class="col-md-3">3</th>
+				<th class="col-md-3">3</th>
 			</thead>
 			<tbody>
 				{{#each products}}
 					<tr>
-						<th class="col-md-9">
+						<th class="col-md-3">
 							{{{name}}}
 						</th>
 						<td class="col-md-3">
 							{{{brand}}}
-						</td>				
+						</td>
+						<td class="col-md-3">
+							{{{decade}}}
+						</td>		
+						<td class="col-md-3">
+							{{{type}}}
+						</td>
 					</tr>
 				{{/each}}
 			</tbody>
@@ -34,5 +42,16 @@
 	  		<span class="custom-control-description">{{this}}</span>
 		</label>
 	{{/each}}
+
+	<hr>
+	{{#each types}}
+		<label class="custom-control custom-radio">
+	  		<input id="searchOPType" name="radio" type="checkbox" class="custom-control-input">
+	  		<span class="custom-control-indicator"></span>
+	  		<span class="custom-control-description">{{this}}</span>
+		</label>
+	{{/each}}
+
+	
 
 </template>
