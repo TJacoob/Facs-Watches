@@ -1,0 +1,38 @@
+<template name="search">
+
+	<h1>Search</h1>
+	<input type="text" id="search-box" placeholder="Search Products" />
+	<table class="table table-hover">
+		{{#if isLoading}}
+			<p>Loading</p>
+		{{else}}
+			<thead>
+				<th class="col-md-9">1</th>
+				<th class="col-md-3	">2</th>
+			</thead>
+			<tbody>
+				{{#each products}}
+					<tr>
+						<th class="col-md-9">
+							{{{name}}}
+						</th>
+						<td class="col-md-3">
+							{{{brand}}}
+						</td>				
+					</tr>
+				{{/each}}
+			</tbody>
+		{{/if}}
+	</table>
+
+	<h2>Filters</h2>
+
+	{{#each brands}}
+		<label class="custom-control custom-radio">
+	  		<input id="searchOP" name="radio" type="checkbox" class="custom-control-input">
+	  		<span class="custom-control-indicator"></span>
+	  		<span class="custom-control-description">{{this}}</span>
+		</label>
+	{{/each}}
+
+</template>
