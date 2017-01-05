@@ -22,7 +22,7 @@ Meteor.publish('singleImage', function(id){
 });
 
 /* Search Testing */
-/*Meteor.publish( 'products', function( search ) {
+Meteor.publish( 'products', function( search ) {
   check( search, Match.OneOf( String, null, undefined ) );
 
   let query      = {},
@@ -42,14 +42,4 @@ Meteor.publish('singleImage', function(id){
   }
 
   return Products.find( query, projection );
-}); */
-
-/* Filter Testing */
-
-Meteor.publish('products', function(){
-  return Products.find();
-});
-
-Meteor.publish('productsFilter', function(filter){
-  return Products.find();
 });
