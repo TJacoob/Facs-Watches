@@ -2,23 +2,23 @@ var options = {
   keepHistory: 1000 * 60 * 5,
   localSearch: true
 };
-var fields = ['name', 'brand','type'];
-var filter = {name:"", brand:[], type:[]};
+var fields = ['name', 'brand','type','decade'];
+var filter = {name:"", brand:[], type:[] };
 
 PackageSearch = new SearchSource('products', fields, options);
 
-Template.search.onCreated(function() {
+Template.AdminSeeAllProducts.onCreated(function() {
     var self = this;
     self.autorun(function(){
         self.subscribe('products');
         filter.brand = distinct(Products,"brand");
     	filter.type = distinct(Products,"type");
     });
-    
+
     PackageSearch.search("",filter);
 });
 
-Template.search.helpers({
+Template.AdminSeeAllProducts.helpers({
   products: function() {
     return PackageSearch.getData({
       transform: function(matchText, regExp) {
@@ -26,7 +26,7 @@ Template.search.helpers({
       },
       sort: {isoScore: -1}
     });
-  },
+  }, 
   
   isLoading: function() {
     return PackageSearch.getStatus().loading;
@@ -43,7 +43,7 @@ Template.search.helpers({
 var empty = true ;
 var emptyType = true ;
 
-Template.search.events({
+Template.AdminSeeAllProducts.events({
   "keyup #search-box": _.throttle(function(e) {
     var text = $(e.target).val().trim();
     filter.name = text ;

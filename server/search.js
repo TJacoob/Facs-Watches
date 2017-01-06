@@ -2,8 +2,6 @@ SearchSource.defineSource('products', function(searchText, options) {
 
   var filter = options ;
 
-  console.log(filter);
-
   var brands = [];
   var types = [];
 
@@ -24,7 +22,6 @@ SearchSource.defineSource('products', function(searchText, options) {
       {name: buildRegExp(filter.name)},
       {brand: { $in: brands } },
       {type: { $in: types } },
-      //{$cond: { if: { $in: brands }, then: {  }, else: {  } }
     ]};
 
     return Products.find(selector2, options).fetch();
