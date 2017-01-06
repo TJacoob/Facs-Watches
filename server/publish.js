@@ -34,7 +34,9 @@ Meteor.publish( 'products', function( search ) {
     query = {
       $or: [
         { name: regex },
-        { brand: regex }
+        { brand: regex },
+        { type: regex },
+        { decade: regex }
       ]
     };
 

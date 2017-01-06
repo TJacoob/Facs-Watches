@@ -12,38 +12,89 @@
 </template> -->
 
 <template name="AdminSeeAllProducts">
-	<h1>All Products</h1>
-	<table class="table table-hover">
-		{{#if Template.subscriptionsReady}}
-			<thead>
-				<th class="col-md-7">1</th>
-				<th class="col-md-3	">2</th>
-			</thead>
-			<tbody>
-				{{#each products}}
-					<tr>
-						<th class="col-md-7">
-							{{name}}
-						</th>
-						<td class="col-md-3">
-							{{brand}}
-						</td>				
-						<td class="col-md-2 text-md-right">
-							<a class="no-padding" href="/admin/product/{{_id}}">
-								<i class="fa fa-search-plus fa-fw"></i>
-							</a>
-							<a class="hidden-md-down no-padding" href="/admin/product/{{_id}}">
-								<i class="fa fa-pencil fa-fw"></i>
-							</a>
-							<a class="hidden-md-down no-padding" href="#">
-								<i class="fa fa-trash fa-fw"></i>
-							</a>
-						</td>
-					</tr>
-				{{/each}}
-			</tbody>
-		{{else}}
-			<p>Loading</p>
-		{{/if}}
-	</table>
+
+	<div class="row no-margin">
+		<div class="col-md-12 headerBar">
+			<h3 class="no-margin">All Products</h3>
+		</div>
+	</div>
+
+	<div class="row no-margin">
+		<div class="col-md-12 py-2 input-group search-bar-container">
+			<div class="input-group-addon">
+	      		<span><i class="fa fa-search" aria-hidden="true"></i></span>
+	    	</div>
+			<input type="text" class="form-control" id="search-box" placeholder="Search Products" />
+		</div>
+	</div>
+
+	<div class="row no-margin">
+		<div class="col-md-12 show-search-container pre-scrollable">
+			<table class="table table-hover table-sm">
+				{{#if isLoading}}
+					<p>Loading</p>
+				{{else}}
+					<thead>
+						<th class="col-md-3">ID</th>
+						<th class="col-md-3">Name</th>
+						<th class="col-md-3">Brand</th>
+						<th class="col-md-3 text-md-right">Actions</th>
+					</thead>
+					<tbody>
+						{{#each products}}
+							<tr>
+								<th class="col-md-3">
+									{{{_id}}}
+								</th>
+								<th class="col-md-3">
+									{{{name}}}
+								</th>
+								<td class="col-md-3">
+									{{{brand}}}
+								</td>
+								<td class="col-md-3 text-md-right">
+									<a class="no-padding" href="/admin/product/{{_id}}">
+										<i class="fa fa-search-plus fa-fw"></i>
+									</a>
+									<a class="hidden-md-down no-padding" href="/admin/product/{{_id}}">
+										<i class="fa fa-pencil fa-fw"></i>
+									</a>
+									<a class="hidden-md-down no-padding" href="#">
+										<i class="fa fa-trash fa-fw"></i>
+									</a>
+								</td>
+							</tr>
+						{{/each}}
+					</tbody>
+				{{/if}}
+			</table>
+		</div>
+	</div>
+
+	<div class="row no-margin filter-panel">
+		<div class="col-md-12 hidden-md-down">
+			<div class="row py-1">
+				<div class="col-md-3">
+					<p class="my-0">Brands:</p>
+					{{#each brands}}
+						<label class="form-check no-margin">
+	  						<input class="form-check-input mx-0" type="checkbox" id="searchOP">{{this}}
+						</label>
+					{{/each}}
+				</div>
+				<div class="col-md-3">
+					<p class="my-0">Types:</p>
+					{{#each types}}
+						<label class="form-check no-margin">
+	  						<input class="form-check-input mx-0" type="checkbox" id="searchOPType">{{this}}
+						</label>				
+					{{/each}}
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
 </template>

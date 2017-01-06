@@ -36,10 +36,27 @@ Template.AdminSeeAllProducts.onCreated(function() {
     self.autorun(function(){
         self.subscribe('products');
     });
+    PackageSearch.search("");
 });
 
 Template.AdminSeeAllProducts.helpers({
-    products: ()=> {
-        return Products.find();
-    }
+  products: function() {
+    return PackageSearch.getData({
+      transform: function(matchText, regExp) {
+        return matchText.replace(regExp, "<b>$&</b>")
+      },
+      sort: {isoScore: -1}
+    });
+  },
+  
+  isLoading: function() {
+    return PackageSearch.getStatus().loading;
+  },
+});
+
+Template.AdminSeeAllProducts.events({
+  "keyup #search-box": _.throttle(function(e) {
+    var text = $(e.target).val().trim();
+    PackageSearch.search(text);
+  }, 200)
 });

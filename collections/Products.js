@@ -27,6 +27,14 @@ ProductsSchema = new SimpleSchema({
 		type: String,
 		label: "Brand"
 	},
+	decade: {
+		type: Number,
+		label: "Decade"
+	},
+	type: {
+		type: String,
+		label: "Type"
+	},
 	picture: {
 	    type: String,
 	    autoform: {
