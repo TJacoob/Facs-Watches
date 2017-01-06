@@ -29,6 +29,12 @@ Template.AdminSingleProductFull.helpers({
 Template.AdminSingleProductFull.events({
 	'click .fa-pencil' : function(){
 		Session.set('editMode', !Session.get('editMode'))
+	},
+	'click .fa-arrow-left' : function(){
+		Session.set('editMode', false)
+	},
+	'click .fa-check' : function(){
+		Session.set('editMode', !Session.get('editMode'))
 	}
 });
 

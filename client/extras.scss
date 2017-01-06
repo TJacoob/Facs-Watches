@@ -141,15 +141,37 @@
 }
 
 .fa-pencil {
-    color: #1c1c1c ; /* Replace with desired color */
+    color: #333333 ; /* Replace with desired color */
 }
 .fa-pencil:hover {
-    color: grey ; /* Replace with desired color */
+    color: #1c1c1c ; /* Replace with desired color */
 }
 
 .fa-search-plus {
-    color: #1c1c1c ; /* Replace with desired color */
+    color: #333333 ; /* Replace with desired color */
 }
 .fa-search-plus:hover {
-    color: grey ; /* Replace with desired color */
+    color: #1c1c1c ; /* Replace with desired color */
+}
+
+.fa-arrow-left {
+    color: #333333 ; /* Replace with desired color */
+}
+.fa-arrow-left:hover {
+    color: #1c1c1c ; /* Replace with desired color */
+}
+
+.fa-check {
+    color: #333333 ; /* Replace with desired color */
+}
+.fa-check:hover {
+    color: #1c1c1c ; /* Replace with desired color */
+}
+
+.img-product
+{
+    width: auto;
+    max-width: 100%;
+    height: auto ;
+    max-height: 50vh ;
 }
