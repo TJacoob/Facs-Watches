@@ -104,7 +104,6 @@
 .search-bar-container
 {
     background-color: #333333;
-    border-bottom: 0.3em #cca300 solid;
 }
 
 #search-box
@@ -115,7 +114,7 @@
 
 .show-search-container
 {
-    max-height: 400px !important ;
+    
 }
 
 .filter-panel
@@ -174,4 +173,31 @@
     max-width: 100%;
     height: auto ;
     max-height: 50vh ;
+}
+
+.btn-filter
+{
+    background-color: white ;
+}
+.btn-filter[aria-expanded="true"]
+{
+    background-color: #eceeef
+    /* border: 0.15em solid #cca300; */
+}
+
+.py-0_5
+{
+    padding-top: 0.4em;
+    padding-bottom: 0.4em ;
+}
+
+.my-0_5
+{
+    margin-top: 0.4em;
+    margin-bottom: 0.4em ;   
+}
+
+.mb-0_5
+{
+    margin-bottom: 0.4em ;   
 }

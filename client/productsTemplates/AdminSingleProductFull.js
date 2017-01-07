@@ -35,6 +35,14 @@ Template.AdminSingleProductFull.events({
 	},
 	'click .fa-check' : function(){
 		Session.set('editMode', !Session.get('editMode'))
+	},
+	'click .fa-trash' : function(){
+		let id = FlowRouter.getParam('id') ;
+		if (confirm('Are you sure you want to delete ' + id + '?'))
+			{
+				Meteor.call('deleteProduct', id);
+				FlowRouter.go('AdminAllProduct');
+			}
 	}
 });
 

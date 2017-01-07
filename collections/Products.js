@@ -13,6 +13,12 @@ Products.allow({
 	}
 });
 
+Meteor.methods({
+	deleteProduct: function(id){
+		Products.remove(id);
+	}
+});
+
 /* Collection Atributes */
 ProductsSchema = new SimpleSchema({
 	name: { 

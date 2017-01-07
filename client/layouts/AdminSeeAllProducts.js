@@ -7,14 +7,17 @@ var filter = {name:"", brand:[], type:[] };
 
 PackageSearch = new SearchSource('products', fields, options);
 
-Template.AdminSeeAllProducts.onCreated(function() {
+Template.AdminSeeAllProducts.onRendered(function() {
     var self = this;
+
     self.autorun(function(){
         self.subscribe('products');
         filter.brand = distinct(Products,"brand");
-    	filter.type = distinct(Products,"type");
+    	  filter.type = distinct(Products,"type");
+        empty = true ;
+        emptyType = true ;
     });
-
+    console.log(filter);
     PackageSearch.search("",filter);
 });
 
@@ -49,6 +52,7 @@ Template.AdminSeeAllProducts.events({
     filter.name = text ;
     PackageSearch.search("-", filter);
   }, 200),
+
   "click #searchOP": function(){
 
   	if ((filter.brand.indexOf(this.valueOf()) > -1)&&(!empty) ) {

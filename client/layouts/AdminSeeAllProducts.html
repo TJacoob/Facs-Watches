@@ -19,8 +19,9 @@
 		</div>
 	</div>
 
+
 	<div class="row no-margin">
-		<div class="col-md-12 py-2 input-group search-bar-container">
+		<div class="col-md-12 py-0_5 pb-0 input-group search-bar-container">
 			<div class="input-group-addon">
 	      		<span><i class="fa fa-search" aria-hidden="true"></i></span>
 	    	</div>
@@ -28,17 +29,46 @@
 		</div>
 	</div>
 
+	<div class="row no-margin px-1" style=" border-bottom: 0.3em #cca300 solid; background-color: #333333;">
+		<button class="btn btn-filter my-0_5" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  		  Brands
+  		</button>
+  		<button class="btn btn-filter my-0_5" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+  		  Types
+  		</button>
+		<div class="collapse" id="collapseExample">
+  			<div class="card card-block py-0_5 mb-0_5">
+    			{{#each brands}}
+					<label class="form-check form-check-inline no-margin my-0">
+  						<input class="form-check-input mx-0" type="checkbox" id="searchOP"> {{this}}
+					</label>
+				{{/each}}
+  			</div>
+		</div>
+		<div class="collapse" id="collapseExample1">
+  			<div class="card card-block py-0_5 mb-0_5">
+    			{{#each types}}
+					<label class="form-check form-check-inline no-margin my-0">
+  						<input class="form-check-input mx-0" type="checkbox" id="searchOPType"> {{this}}
+					</label>				
+				{{/each}}
+  			</div>
+		</div>
+	</div>
+
 	<div class="row no-margin">
-		<div class="col-md-12 show-search-container pre-scrollable">
+		<div class="col-md-12 show-search-container">
 			<table class="table table-hover table-sm">
 				{{#if isLoading}}
-					<p>Loading</p>
+					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
+					<span class="sr-only">Loading...</span>
 				{{else}}
 					<thead>
 						<th class="col-md-3">ID</th>
 						<th class="col-md-3">Name</th>
 						<th class="col-md-3">Brand</th>
-						<th class="col-md-3 text-md-right">Actions</th>
+						<th class="col-md-2">Type</th>
+						<th class="col-md-1 text-md-right">Actions</th>
 					</thead>
 					<tbody>
 						{{#each products}}
@@ -52,16 +82,19 @@
 								<td class="col-md-3">
 									{{{brand}}}
 								</td>
-								<td class="col-md-3 text-md-right">
+								<td class="col-md-2">
+									{{{type}}}
+								</td>
+								<td class="col-md-1 text-md-right">
 									<a class="no-padding" href="/admin/product/{{_id}}">
 										<i class="fa fa-search-plus fa-fw"></i>
 									</a>
 									<a class="hidden-md-down no-padding" href="/admin/product/{{_id}}">
 										<i class="fa fa-pencil fa-fw"></i>
 									</a>
-									<a class="hidden-md-down no-padding" href="#">
+									<!--<a class="hidden-md-down no-padding" href="#">
 										<i class="fa fa-trash fa-fw"></i>
-									</a>
+									</a> Does it make sense to delete products this easily?-->
 								</td>
 							</tr>
 						{{/each}}
@@ -71,7 +104,7 @@
 		</div>
 	</div>
 
-	<div class="row no-margin filter-panel">
+	<!-- <div class="row no-margin filter-panel">
 		<div class="col-md-12 hidden-md-down">
 			<div class="row py-1">
 				<div class="col-md-3">
@@ -95,6 +128,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 </template>
