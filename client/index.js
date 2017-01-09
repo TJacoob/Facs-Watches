@@ -4,4 +4,3 @@ import 'bootstrap';
 
 /* Receiving Products list from server */
 //Meteor.subscribe('products');
-

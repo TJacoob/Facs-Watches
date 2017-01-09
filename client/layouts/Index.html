@@ -1,0 +1,115 @@
+<template name="index">
+	
+	<div class="hidden-lg-up">
+		{{> IndexNavbarMobile}}
+	</div>
+
+	<div class="hidden-md-down">
+		{{> IndexNavbar}}
+	</div>
+
+	
+
+	<div class="row no-margin">
+		<div class="col-md-12 splash p-0">
+			<img src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img"/>
+			<p>grvf</p>
+		</div>
+	</div>
+
+	<div class="row no-margin">
+		<div class="col-md-12 splash" style="background-color: red">
+			<p>grvf</p>
+		</div>
+	</div>
+
+	<div class="row no-margin">
+		<div class="col-md-12 splash" style="background-color: yellow">
+			<p>grvf</p>
+		</div>
+	</div>
+
+</template>
+
+
+
+<template name="IndexNavbar">
+	<div class="row no-margin splash-nav">
+		<table class="table text-md-center mb-0">
+			<tr>
+				<td class="col-md-2">
+					<p class="m-0" style="color:white ">FACS Watches</p>
+				</td>
+				<td class="col-md-7">
+					
+				</td>
+				<a href="#">
+					<td class="col-md-1">
+						<i class="fa fa-search fa-2x" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
+					</td>
+				</a>
+				<a href="#">
+					<td class="col-md-1">
+						<i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
+					</td>
+				</a>
+				<a href="#">
+					<td class="col-md-1">
+						<i class="fa fa-phone fa-2x" aria-hidden="true" style="color:white;  vertical-align: middle;"></i>
+					</td>
+				</a>
+			</tr>
+		</table>
+	</div>
+</template>
+
+
+
+<template name="IndexNavbarMobile">
+
+	<nav class="navbar navbar-dark bg-inverse ">
+	  	<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+	  	<div class="collapse navbar-toggleable-md" id="navbarResponsive">
+	    	<a class="navbar-brand" href="#">HeartGold</a>
+	    	<hr>
+	    	<ul class="nav navbar-nav">
+	    		<table>
+	    			<tbody>
+	    				<tr class="nav-item">
+	    					<a class="nav-link" href="/admin/">
+	    						<th class="col-md-1">
+	    							<i class="fa fa-home fa-fw" style="color:white;"></i>
+	    						</th>
+	    						<td class="col-md-11">
+	    							<p class="no-line">Admin Panel</p>
+    							</td>
+	    					</a>
+	    				</tr>
+	    				<tr class="nav-item col-md-2">
+	    					<a class="nav-link" href="/admin/product/all">
+	    						<th class="col-md-1">
+	    							<i class="fa fa-th-list fa-fw" style="color:white;"></i>
+    							</th>
+	    						<td class="col-md-11">
+	    							<p class="no-line">See All Products</p>
+	    						</td>
+	    					</a>
+	    				</tr>
+	    				<tr class="nav-item col-md-2">
+	    					<a class="nav-link" href="/admin/product/add">
+	    						<th class="col-md-1">
+	    							<i class="fa fa-plus-square-o fa-fw" style="color:white;"></i>
+    							</th>
+	    						<td class="col-md-11">
+	    							<p class="no-line">Add Product</p>
+    							</td>
+	    					</a>
+	    				</tr>
+	    			</tbody>
+	    		</table>
+	    		<hr>
+	    	</ul>
+	  	</div>
+	</nav>
+	
+</template>
