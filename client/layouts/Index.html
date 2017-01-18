@@ -8,23 +8,27 @@
 		{{> IndexNavbar}}
 	</div>
 
-	
+	<div class="row no-margin">
+		<div class="col-md-12 col-xs-12 splash p-0">
+			<!-- Mobile -->
+			<div style="overflow: hidden">
+				<img class="hidden-lg-up" src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img-mobile-back"/>
+				<img class="hidden-lg-up" src="facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
+			</div>
+			<!-- Desktop -->
+			<img class="hidden-md-down" src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img"/>
+			<img class="hidden-md-down" src="facs.png" id="splash-img" style="opacity: 1"/>
+		</div>
+	</div>
 
 	<div class="row no-margin">
-		<div class="col-md-12 splash p-0">
-			<img src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img"/>
+		<div class="col-md-12 col-xs-12 splash" style="background-color: red">
 			<p>grvf</p>
 		</div>
 	</div>
 
 	<div class="row no-margin">
-		<div class="col-md-12 splash" style="background-color: red">
-			<p>grvf</p>
-		</div>
-	</div>
-
-	<div class="row no-margin">
-		<div class="col-md-12 splash" style="background-color: yellow">
+		<div class="col-md-12 col-xs-12 splash" style="background-color: yellow">
 			<p>grvf</p>
 		</div>
 	</div>
@@ -34,31 +38,56 @@
 
 
 <template name="IndexNavbar">
-	<div class="row no-margin splash-nav">
+	<div class="row is-flex no-margin splash-nav">
 		<table class="table text-md-center mb-0">
+			<!-- <tr>
+				<td class="col-md">
+					<a class="navbar-brand p-0" href="#">
+	    				<img src="facsCropped.png" width="75" height="auto" style="margin: 0px 0px 0px 20px" alt="">
+  					</a>
+				</td>
+				<td class="col-md">
+
+				</td> 
+				<a href="#">
+					<td class="col-md">
+						<i class="fa fa-search fa-2x fa-fw" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
+						<span style="color:white">Search</span>
+					</td>
+				</a>
+				<a href="#">
+					<td class="col-md">
+						<i class="fa fa-map-marker fa-2x fa-fw" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
+						<span style="color:white">Search</span>
+					</td>
+				</a>
+				<a href="#">
+					<td class="col-md">
+						<i class="fa fa-phone fa-2x fa-fw" aria-hidden="true" style="color:white;  vertical-align: middle;"></i>
+						<span style="color:white">Search</span>
+					</td>
+				</a>
+			</tr>-->
 			<tr>
-				<td class="col-md-2">
-					<p class="m-0" style="color:white ">FACS Watches</p>
+				<td class="col-md-3" style="background: rgba(28,28,28,0.7) ;">
+					<a class="" href="#">
+	    				<img src="facsCropped.png" width="75" height="auto" style="margin: 0px 0px 0px 20px" alt="">
+  					</a>
 				</td>
-				<td class="col-md-7">
-					
+				<td class="col-md-3 hvr-shutter-out-horizontal">
+					<i class="fa fa-search fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>Search</span>
 				</td>
-				<a href="#">
-					<td class="col-md-1">
-						<i class="fa fa-search fa-2x" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
-					</td>
-				</a>
-				<a href="#">
-					<td class="col-md-1">
-						<i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
-					</td>
-				</a>
-				<a href="#">
-					<td class="col-md-1">
-						<i class="fa fa-phone fa-2x" aria-hidden="true" style="color:white;  vertical-align: middle;"></i>
-					</td>
-				</a>
+				<td class="col-md-3 hvr-shutter-out-horizontal">
+					<i class="fa fa-map-marker fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>Store</span>
+				</td>
+				<td class="col-md-3 hvr-shutter-out-horizontal">
+					<i class="fa fa-phone fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>Contacts</span>
+				</td>
 			</tr>
+
 		</table>
 	</div>
 </template>
@@ -67,41 +96,54 @@
 
 <template name="IndexNavbarMobile">
 
-	<nav class="navbar navbar-dark bg-inverse ">
+	<nav class="navbar navbar-dark navbar-fixed-top bg-inverse ">
 	  	<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 	  	<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-	    	<a class="navbar-brand" href="#">HeartGold</a>
+	    	<a class="navbar-brand" href="#">
+	    		<img class="center-block" src="facsCropped.png" width="75" height="auto" alt="">
+	    	</a>
 	    	<hr>
+	    	<div class="row text-xs-center">
+	    		<a class="nav-link" href="#" style="color:white">
+					<i class="fa fa-search fa-fw" style="color:white;"></i>
+					<p class="no-line ">Search</p>
+				</a>
+	    	</div>
+	    	<div class="row text-xs-center my-1">
+	    		<a class="nav-link" href="#" style="color:white">
+					<i class="fa fa-map-marker fa-fw" style="color:white;"></i>
+					<p class="no-line">Store</p>
+				</a>
+	    	</div>
+	    	<div class="row text-xs-center">
+	    		<a class="nav-link" href="#" style="color:white">
+					<i class="fa fa-phone fa-fw" style="color:white;"></i>
+					<p class="no-line ">Contacts</p>
+				</a>
+	    	</div>
+	    	<!--
 	    	<ul class="nav navbar-nav">
-	    		<table>
+	    		<table class="table">
 	    			<tbody>
-	    				<tr class="nav-item">
-	    					<a class="nav-link" href="/admin/">
-	    						<th class="col-md-1">
-	    							<i class="fa fa-home fa-fw" style="color:white;"></i>
-	    						</th>
-	    						<td class="col-md-11">
-	    							<p class="no-line">Admin Panel</p>
-    							</td>
+	    				<tr class="nav-item text-xs-center">
+	    					<a class="nav-link" href="/admin/" style="color:white">
+    							<i class="fa fa-search fa-fw" style="color:white;"></i>
+    							<p class="no-line ">Search</p>
+	    					</a>
+	    				</tr>
+	    				<tr class="nav-item text-xs-center">
+	    					<a class="nav-link" href="/admin/product/all" style="color:white">
+    							<i class="fa fa-map-marker fa-fw" style="color:white;"></i>
+    							<p class="no-line">Store</p>
 	    					</a>
 	    				</tr>
 	    				<tr class="nav-item col-md-2">
-	    					<a class="nav-link" href="/admin/product/all">
+	    					<a class="nav-link" href="/admin/product/add" style="color:white">
 	    						<th class="col-md-1">
-	    							<i class="fa fa-th-list fa-fw" style="color:white;"></i>
+	    							<i class="fa fa-phone fa-fw" style="color:white;"></i>
     							</th>
 	    						<td class="col-md-11">
-	    							<p class="no-line">See All Products</p>
-	    						</td>
-	    					</a>
-	    				</tr>
-	    				<tr class="nav-item col-md-2">
-	    					<a class="nav-link" href="/admin/product/add">
-	    						<th class="col-md-1">
-	    							<i class="fa fa-plus-square-o fa-fw" style="color:white;"></i>
-    							</th>
-	    						<td class="col-md-11">
-	    							<p class="no-line">Add Product</p>
+	    							<p class="no-line">Contacts</p>
     							</td>
 	    					</a>
 	    				</tr>
@@ -109,6 +151,8 @@
 	    		</table>
 	    		<hr>
 	    	</ul>
+	    	-->
+	    	<hr>
 	  	</div>
 	</nav>
 	

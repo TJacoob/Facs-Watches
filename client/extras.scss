@@ -132,9 +132,9 @@
 {
     width: 100%;
     height: auto ;
-    //background-color: transparent;
-    background-color: rgba(28,28,28,0.7) ;
-    border-bottom: 0.2em solid #cca300 ;
+    background-color: transparent;
+    //background-color: rgba(28,28,28,0.7) ;
+    border-bottom: 0.2em solid #ffcb00 ;
     position: fixed;
     top: 0;
     color: white ;
@@ -144,17 +144,52 @@
 
 .splash
 {
+    position: relative;
+    display: inline ;
     height: 100vh;
+    width: 100% ;
+    background-color: #1c1c1c ;
+}
+
+.splash-mobile
+{
+    position: relative;
+    display: inline ;
+    height: 200% ;
     width: 100% ;
     background-color: #1c1c1c ;
 }
 
 #splash-img
 {
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 100vh;
     width: 100% ;
     opacity: 0.5 ;
 }
+
+#splash-img-mobile
+{
+    position: absolute;
+    top: 35% ;
+    right: 0;
+    height: auto;
+    width: 100% ;
+    opacity: 0.5 ;
+}
+
+#splash-img-mobile-back
+{
+    position: relative;
+    left: -75%;
+    height: 100% ;
+    width: auto ;
+    opacity: 0.5 ;
+}
+
+
 
 /* Icons CSS */
 
@@ -205,6 +240,13 @@
     max-height: 50vh ;
 }
 
+.img-splash
+{
+    width: auto;
+    height: 100% ;
+    z-index: 50 ;
+}
+
 .btn-filter
 {
     background-color: white ;
@@ -230,4 +272,46 @@
 .mb-0_5
 {
     margin-bottom: 0.4em ;   
+}
+
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: rgba(28,28,28,0.7) ;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffcb00 ;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+  color: #1c1c1c ;
+}
+.hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
