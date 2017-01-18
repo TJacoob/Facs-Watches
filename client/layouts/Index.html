@@ -8,17 +8,12 @@
 		{{> IndexNavbar}}
 	</div>
 
-	<div class="row no-margin">
-		<div class="col-md-12 col-xs-12 splash p-0">
-			<!-- Mobile -->
-			<div style="overflow: hidden">
-				<img class="hidden-lg-up" src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img-mobile-back"/>
-				<img class="hidden-lg-up" src="facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
-			</div>
-			<!-- Desktop -->
-			<img class="hidden-md-down" src="https://visualhunt.com/photos/xl/7/watchful-watchfulness-time-piece.jpg" id="splash-img"/>
+	<div class="row no-margin" style="overflow: hidden">
+		<div class="col-md-12 col-xs-12 splash p-0 background-screen" id="back0" >
 			<img class="hidden-md-down" src="facs.png" id="splash-img" style="opacity: 1"/>
+			<img class="hidden-lg-up" src="facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
 		</div>
+
 	</div>
 
 	<div class="row no-margin">
@@ -27,9 +22,43 @@
 		</div>
 	</div>
 
-	<div class="row no-margin">
-		<div class="col-md-12 col-xs-12 splash" style="background-color: yellow">
-			<p>grvf</p>
+	<div class="row m-0">
+		<div class="col-md-12 col-xs-12 py-3 background-screen text-md-center text-xs-center" id="back2">
+
+			<h1 style="color:white">OUR BRANDS</h1>
+
+			<div class="row py-1">
+				<div class="col-md-6">
+					<p style="color:white; font-size: 2em">1</p>
+					<p style="color:white; font-size: 2em">1</p>
+					<p style="color:white; font-size: 2em">1</p>
+					<p style="color:white; font-size: 2em">1</p>
+				</div>
+
+				<div class="col-md-6">
+					<p style="color:white; font-size: 2em">2</p>
+					<p style="color:white; font-size: 2em">2</p>
+					<p style="color:white; font-size: 2em">2</p>
+					<p style="color:white; font-size: 2em">2</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="row m-0 text-md-center text-xs-center">
+		<div class="col-md-6 col-xs-6 py-3 background-screen " id="back3">
+			<p style="color:white; font-size: 2em">2</p>
+			<p style="color:white; font-size: 2em">2</p>
+			<p style="color:white; font-size: 2em">2</p>
+			<p style="color:white; font-size: 2em">2</p>
+			<p style="color:white; font-size: 2em">2</p>
+			<p style="color:white; font-size: 2em">2</p>
+		</div>
+		<div class="col-md-6 col-xs-6 p-0">
+			<div class="embed-responsive embed-responsive-4by3">
+    			<iframe class="embed-responsive-item" style="position:absolute;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12448.749105061224!2d-9.30629315!3d38.7364645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92000ad2cef547fa!2sTaguspark%2C+SA!5e0!3m2!1sen!2spt!4v1484710434063" ></iframe>
+			</div>
 		</div>
 	</div>
 
@@ -38,36 +67,8 @@
 
 
 <template name="IndexNavbar">
-	<div class="row is-flex no-margin splash-nav">
+	<div class="row no-margin splash-nav">
 		<table class="table text-md-center mb-0">
-			<!-- <tr>
-				<td class="col-md">
-					<a class="navbar-brand p-0" href="#">
-	    				<img src="facsCropped.png" width="75" height="auto" style="margin: 0px 0px 0px 20px" alt="">
-  					</a>
-				</td>
-				<td class="col-md">
-
-				</td> 
-				<a href="#">
-					<td class="col-md">
-						<i class="fa fa-search fa-2x fa-fw" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
-						<span style="color:white">Search</span>
-					</td>
-				</a>
-				<a href="#">
-					<td class="col-md">
-						<i class="fa fa-map-marker fa-2x fa-fw" aria-hidden="true" style="color:white; vertical-align: middle;"></i>
-						<span style="color:white">Search</span>
-					</td>
-				</a>
-				<a href="#">
-					<td class="col-md">
-						<i class="fa fa-phone fa-2x fa-fw" aria-hidden="true" style="color:white;  vertical-align: middle;"></i>
-						<span style="color:white">Search</span>
-					</td>
-				</a>
-			</tr>-->
 			<tr>
 				<td class="col-md-3" style="background: rgba(28,28,28,0.7) ;">
 					<a class="" href="#">
@@ -121,37 +122,6 @@
 					<p class="no-line ">Contacts</p>
 				</a>
 	    	</div>
-	    	<!--
-	    	<ul class="nav navbar-nav">
-	    		<table class="table">
-	    			<tbody>
-	    				<tr class="nav-item text-xs-center">
-	    					<a class="nav-link" href="/admin/" style="color:white">
-    							<i class="fa fa-search fa-fw" style="color:white;"></i>
-    							<p class="no-line ">Search</p>
-	    					</a>
-	    				</tr>
-	    				<tr class="nav-item text-xs-center">
-	    					<a class="nav-link" href="/admin/product/all" style="color:white">
-    							<i class="fa fa-map-marker fa-fw" style="color:white;"></i>
-    							<p class="no-line">Store</p>
-	    					</a>
-	    				</tr>
-	    				<tr class="nav-item col-md-2">
-	    					<a class="nav-link" href="/admin/product/add" style="color:white">
-	    						<th class="col-md-1">
-	    							<i class="fa fa-phone fa-fw" style="color:white;"></i>
-    							</th>
-	    						<td class="col-md-11">
-	    							<p class="no-line">Contacts</p>
-    							</td>
-	    					</a>
-	    				</tr>
-	    			</tbody>
-	    		</table>
-	    		<hr>
-	    	</ul>
-	    	-->
 	    	<hr>
 	  	</div>
 	</nav>
