@@ -23,7 +23,7 @@
 				<div class="col-md-4 col-xs-12">
 					<div class="card">
 						{{#with p=this._id}}
-	    					<img class="card-img-top condensed-img" src="{{productImage.link}}" alt="Card image cap">
+	    					<img class="card-img-top condensed-img p-1" src="{{productImage.link}}" alt="Card image cap">
 	  					{{/with}}
 	  					<hr>
 						<div class="card-block pt-0">
@@ -31,9 +31,7 @@
 							<p class="card-subtitle">{{brand}}</p>
 						</div>
 						<div class="card-footer hvr-fade">
-							
 							<p onclick="window.location='http://google.com'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
-							
 						</div>
 					</div>
 				</div>
@@ -47,6 +45,83 @@
 			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
 		</div>
 	</div>
+
+	<div class="row mx-0 my-1 mt-3 py-3 text-md-center text-xs-center background-screen" id="back2" style="color: white">
+		<h4>Our Brands</h4>
+		<div class="col-md-10 offset-md-1 col-xs-12 pt-1">
+			{{#each brands}}
+				<div class="col-md-3 col-xs-6">
+					<p>{{this}}</p>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+
+	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
+		<h4>Our store</h4>
+		<div class="col-md-5 offset-md-1 col-xs-12 text-justify pt-1">
+			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
+		</div>
+		<div class="col-md-5 col-xs-12 pt-1">
+			<img src="/back3.jpg" class="img-fluid rounded" style="vertical-align: middle;" />
+		</div>
+	</div>
+
+	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
+		<h4>Our services</h4>
+		<div class="col-md-3 offset-md-1 col-xs-12 pt-1 pr-2">
+			<i class="fa fa-wrench fa-3x mb-2" aria-hidden="true"></i>
+			<p class="m-0"><strong>Bacon</strong></p>
+			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
+		</div>
+		<div class="col-md-4 col-xs-12 pt-1 px-2">
+			<i class="fa fa-diamond fa-3x mb-2" aria-hidden="true"></i>
+			<p class="m-0"><strong>Bacon</strong></p>
+			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
+		</div>
+		<div class="col-md-3 col-xs-12 pt-1 pl-2">
+			<i class="fa fa-question fa-3x mb-2" aria-hidden="true"></i>
+			<p class="m-0"><strong>Bacon</strong></p>
+			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
+		</div>
+	</div>
+
+	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
+		<div class="col-md-5 offset-md-1 col-xs-12 pt-1">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12448.749105061224!2d-9.30629315!3d38.7364645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92000ad2cef547fa!2sTaguspark%2C+SA!5e0!3m2!1sen!2spt!4v1484772437891" style="pointer-events: none;"></iframe> <!-- Must be used proper Google Maps API when deployed -->
+			</div>
+		</div>
+		<div class="col-md-5 col-xs-12 pt-1 text-md-left">			
+
+			<ul style="list-style-type: none;">
+				<h4>Come visit us</h4>
+				<hr>
+				<li class="my-1">
+					<i class="fa fa-phone fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>+351 123 456 789</span>
+				</li>
+				<li class="my-1">
+					<i class="fa fa-mobile fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span> +351 123 456 789</span>
+				</li>
+				<li class="my-1">
+					<i class="fa fa-map-marker fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>Av. Lorem Ipsum, nº 123 </span>
+				</li>
+				<li class="my-1">
+					<i class="fa fa-envelope-o fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>info@facswatches.pt</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!--<div class="row mx-0 mt-3 p-1 text-md-center text-xs-center background-screen" id="back4">
+		<p>Footer</p>
+	</div>-->
+
+
 
 	<!--
 

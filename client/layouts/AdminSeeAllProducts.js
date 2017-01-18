@@ -114,6 +114,7 @@ Template.AdminSeeAllProducts.events({
   }
 });
 
+
 function distinct(collection, field) {
   return _.uniq(collection.find({}, {
     sort: {[field]: 1}, fields: {[field]: 1}
@@ -122,12 +123,12 @@ function distinct(collection, field) {
 
 
 function deleteFrom(array, search_term){
-	for (var i=array.length-1; i>=0; i--) {
+  for (var i=array.length-1; i>=0; i--) {
     if (array[i] === search_term) {
         array.splice(i, 1);
         // break;       //<-- Uncomment  if only the first term has to be removed
     }
-	}
+  }
 
-	return array ;
+  return array ;
 }
