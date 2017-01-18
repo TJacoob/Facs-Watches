@@ -2,5 +2,11 @@ import { Meteor } from 'meteor/meteor'
 
 import 'bootstrap';
 
-/* Receiving Products list from server */
-//Meteor.subscribe('products');
+
+$('.maps').click(function () {
+    $('.maps iframe').css("pointer-events", "auto");
+});
+
+$( ".maps" ).mouseleave(function() {
+  $('.maps iframe').css("pointer-events", "none"); 
+});

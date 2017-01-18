@@ -17,7 +17,6 @@ Template.AdminSeeAllProducts.onRendered(function() {
         empty = true ;
         emptyType = true ;
     });
-    console.log(filter);
     PackageSearch.search("",filter);
 });
 

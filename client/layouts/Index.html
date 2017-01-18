@@ -8,13 +8,47 @@
 		{{> IndexNavbar}}
 	</div>
 
-	<div class="row no-margin" style="overflow: hidden">
+	<div class="row no-margin" style="overflow: hidden" >
 		<div class="col-md-12 col-xs-12 splash p-0 background-screen" id="back0" >
 			<img class="hidden-md-down" src="facs.png" id="splash-img" style="opacity: 1"/>
 			<img class="hidden-lg-up" src="facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
 		</div>
 
 	</div>
+
+	<div class="row m-1 p-1 text-md-center text-xs-center">
+		<h1>Spotlight</h1>
+		<div class="col-md-10 offset-md-1 px-0 py-1">
+			{{#each spotlight}}
+				<div class="col-md-4 col-xs-12">
+					<div class="card">
+						{{#with p=this._id}}
+	    					<img class="card-img-top condensed-img" src="{{productImage.link}}" alt="Card image cap">
+	  					{{/with}}
+	  					<hr>
+						<div class="card-block pt-0">
+							<h4 class="card-title">{{name}}</h4>
+							<p class="card-subtitle">{{brand}}</p>
+						</div>
+						<div class="card-footer hvr-fade">
+							
+							<p onclick="window.location='http://google.com'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
+							
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
+
+	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
+		<h4>About us</h4>
+		<div class="col-md-10 offset-md-1 col-xs-12 text-justify pt-1">
+			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
+		</div>
+	</div>
+
+	<!--
 
 	<div class="row no-margin">
 		<div class="col-md-12 col-xs-12 splash" style="background-color: red">
@@ -56,11 +90,11 @@
 			<p style="color:white; font-size: 2em">2</p>
 		</div>
 		<div class="col-md-6 col-xs-6 p-0">
-			<div class="embed-responsive embed-responsive-4by3">
+			<div class="embed-responsive embed-responsive-4by3 maps">
     			<iframe class="embed-responsive-item" style="position:absolute;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12448.749105061224!2d-9.30629315!3d38.7364645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92000ad2cef547fa!2sTaguspark%2C+SA!5e0!3m2!1sen!2spt!4v1484710434063" ></iframe>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 </template>
 
