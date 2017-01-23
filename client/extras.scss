@@ -314,7 +314,13 @@
 
 
 /* Shutter Out Horizontal */
-.hvr-shutter-out-horizontal {
+.css-searchbar
+{
+  color: #1c1c1c ;
+  background: #ffcb00 ;
+  cursor:pointer;
+}
+.hvr-shutter-out-horizontal{
   //display: inline-block;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -322,8 +328,8 @@
   box-shadow: 0 0 1px transparent;
   position: relative;
   background: rgba(28,28,28,0.7) ;
-  -webkit-transition-property: color;
-  transition-property: color;
+  -webkit-transition-property: color, background;
+  transition-property: color, background;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   cursor:pointer;
@@ -350,6 +356,7 @@
 }
 .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
   color: #1c1c1c ;
+  background: rgba(28,28,28,0.7) ;
 }
 .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
   -webkit-transform: scaleX(1);

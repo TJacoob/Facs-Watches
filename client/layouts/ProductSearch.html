@@ -20,10 +20,10 @@
 		<div class="col-md-2 offset-md-1 p-1">
 			<span>Filter by:</span>
 		</div>
-		<div class="col-md-2 p-1 hvr-shutter-out-horizontal" id="showBrandFilter">
+		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showBrandFilter">
 			<span>Brand</span>
 		</div>
-		<div class="col-md-2 p-1 hvr-shutter-out-horizontal" id="showTypeFilter">
+		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showTypeFilter">
 			<span>Type</span>
 		</div>
 	</div>
@@ -50,44 +50,53 @@
 
 	<div class="row m-1 text-md-center text-xs-center">
 		<div class="col-md-10 offset-md-1 px-0">
-			{{#each products}}
-				<!-- Desktop -->
-				<div class="col-md-4 hidden-md-down py-3">
-					<div class="card">
-						{{#with p=this._id}}
-	    					<img class="card-img-top condensed-img p-1" src="{{productImage.link}}" alt="Card image cap">
-	  					{{/with}}
-	  					<hr>
-						<div class="card-block pt-0">
-							<h4 class="card-title">{{name}}</h4>
-							<p class="card-subtitle">{{brand}}</p>
-						</div>
-						<div class="card-footer hvr-fade">
-							<p onclick="window.location='http://google.com'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
-						</div>
-					</div>
+			{{#if isLoading}}
+				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
+					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
+					<span class="sr-only">Loading...</span>
 				</div>
+			{{else}}
+				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
+					{{#each products}}
+						<!-- Desktop -->
+						<div class="col-md-4 hidden-md-down py-3">
+							<div class="card">
+								{{#with p=this._id}}
+			    					<img class="card-img-top condensed-img p-1" src="{{productImage.link}}" alt="Card image cap">
+			  					{{/with}}
+			  					<hr>
+								<div class="card-block pt-0">
+									<h4 class="card-title">{{name}}</h4>
+									<p class="card-subtitle">{{brand}}</p>
+								</div>
+								<div class="card-footer hvr-fade">
+									<p onclick="window.location='http://google.com'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
+								</div>
+							</div>
+						</div>
 
-				<!-- Mobile -->
-				<div class="row is-flex-mobile px-0 py-0 hidden-lg-up my-0" style="border-top: 1px solid #1c1c1c">
-					<div class="col-xs-3">
-						{{#with p=this._id}}
-	    					<img class="img-thumbnail" src="{{productImage.link}}" alt="Card image cap">
-	  					{{/with}}
-					</div>
-					<div class="col-xs-7">
-						<span>{{name}}</span>
-						<br>
-						<span>{{brand}}</span>
-					</div>
-					<div class="col-xs-2" >
-						<i class="fa fa-chevron-right" aria-hidden="true"></i>
-					</div>
+						<!-- Mobile -->
+						<div class="row is-flex-mobile px-0 py-0 hidden-lg-up my-0" style="border-top: 1px solid #1c1c1c">
+							<div class="col-xs-3">
+								{{#with p=this._id}}
+			    					<img class="img-thumbnail" src="{{productImage.link}}" alt="Card image cap">
+			  					{{/with}}
+							</div>
+							<div class="col-xs-7">
+								<span>{{name}}</span>
+								<br>
+								<span>{{brand}}</span>
+							</div>
+							<div class="col-xs-2" >
+								<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							</div>
+						</div>
+					{{/each}}
 				</div>
-
-			{{/each}}
+			{{/if}}
 		</div>
 	</div>
+
 
 </template>
 

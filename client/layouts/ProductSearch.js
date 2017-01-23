@@ -24,6 +24,32 @@ Template.productSearch.onRendered(function() {
         emptyType = true ;
     });
     PackageSearch.search("",filter);
+
+    /* jQuery para alterar estilos da barra de navegação */
+    jQuery('.jq-searchbar').click(function(){
+
+      jQuery('.css-searchbar').not(this).toggleClass('hvr-shutter-out-horizontal css-searchbar');
+
+      /*jQuery('.jq-searchbar').not(this).addClass('hvr-shutter-out-horizontal');
+      jQuery('.jq-searchbar').not(this).removeClass('css-searchbar'); */
+
+      if (jQuery(this).hasClass('css-searchbar'))
+      {
+        jQuery(this).addClass('hvr-shutter-out-horizontal');
+        jQuery(this).removeClass('css-searchbar');
+      }
+      else
+      {
+        jQuery(this).removeClass('hvr-shutter-out-horizontal');
+        jQuery(this).addClass('css-searchbar');
+      }
+
+      /*jQuery('.jq-searchbar').addClass('hvr-shutter-out-horizontal');
+      jQuery('.jq-searchbar').removeClass('css-searchbar');
+      
+      jQuery(this).toggleClass('hvr-shutter-out-horizontal css-searchbar');*/
+    });
+
 });
 
 Template.productSearch.helpers({
@@ -44,6 +70,10 @@ Template.productSearch.helpers({
       sort: {isoScore: -1}
     });
   }, 
+
+  isLoading: function() {
+    return PackageSearch.getStatus().loading;
+  },
 
 });
 
