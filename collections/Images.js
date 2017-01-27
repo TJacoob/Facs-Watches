@@ -7,7 +7,7 @@ Images = new FilesCollection({
   chunkSize: 1024*2048,
   throttle: 1024*512,
   permissions: 0755,
-  allowClientCode: false,
+  allowClientCode: true,
   cacheControl: 'public, max-age=31536000',
   onbeforeunloadMessage: function () {
     return 'Upload is still in progress! Upload will be aborted if you leave this page!';
@@ -24,6 +24,7 @@ Images = new FilesCollection({
     if (this.params.query.download == 'true') {
       // Increment downloads counter
       Images.update(fileObj._id, {$inc: {'meta.downloads': 1}});
+
     }
     // Must return true to continue download
     return true;
@@ -37,3 +38,6 @@ Images = new FilesCollection({
     }
   }*/
 });
+
+
+

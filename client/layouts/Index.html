@@ -1,11 +1,14 @@
 <template name="index">
 	
+	<div id="indexTop">
+	</div>
+
 	{{> Navbars}}
 
 	<div class="row no-margin" style="overflow: hidden" >
 		<div class="col-md-12 col-xs-12 splash p-0 background-screen" id="back0" >
-			<img class="hidden-md-down" src="facs.png" id="splash-img" style="opacity: 1"/>
-			<img class="hidden-lg-up" src="facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
+			<img class="hidden-md-down" src="/facs.png" id="splash-img" style="opacity: 1"/>
+			<img class="hidden-lg-up" src="/facsCropped.png" id="splash-img-mobile" style="opacity: 1"/>
 		</div>
 	</div>
 
@@ -24,20 +27,23 @@
 							<p class="card-subtitle">{{brand}}</p>
 						</div>
 						<div class="card-footer hvr-fade">
-							<p onclick="window.location='http://google.com'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
+							<p onclick="window.location='/product/{{_id}}'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
 						</div>
 					</div>
 				</div>
 			{{/each}}
+			<div class="col-md-6 offset-md-3 col-xs-12 mt-2">
+				<a href="/search" style="text-decoration: none">
+					<button type="button" class="btn btn-lg btn-block btn-invert hvr-fade-invert p-1 px-0">See All Products<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></button>
+				</a>
+			</div>
 		</div>
 	</div>
 
-	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
-		<h4>About us</h4>
-		<div class="col-md-10 offset-md-1 col-xs-12 text-justify pt-1">
-			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
-		</div>
+	<div id="about">
 	</div>
+
+	<br>
 
 	<div class="row mx-0 my-1 mt-3 py-3 text-md-center text-xs-center background-screen" id="back2" style="color: white">
 		<h4>Our Brands</h4>
@@ -50,9 +56,10 @@
 		</div>
 	</div>
 
+
 	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
-		<h4>Our store</h4>
-		<div class="col-md-5 offset-md-1 col-xs-12 text-justify pt-1">
+		<div class="col-md-5 offset-md-1 col-xs-12 text-justify pt-1 mt-1">
+			<h4>About us</h4>
 			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
 		</div>
 		<div class="col-md-5 col-xs-12 pt-1">
@@ -60,35 +67,13 @@
 		</div>
 	</div>
 
-	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
-		<h4>Our services</h4>
-		<div class="col-md-3 offset-md-1 col-xs-12 pt-1 pr-2">
-			<i class="fa fa-wrench fa-3x mb-2" aria-hidden="true"></i>
-			<p class="m-0"><strong>Bacon</strong></p>
-			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
+	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center" id="contacts">
+		<div class="col-md-5 offset-md-1 col-xs-12 pt-1 hidden-md-down">
+			<img src="/back3.jpg" class="img-fluid rounded" style="vertical-align: middle;" />
 		</div>
-		<div class="col-md-4 col-xs-12 pt-1 px-2">
-			<i class="fa fa-diamond fa-3x mb-2" aria-hidden="true"></i>
-			<p class="m-0"><strong>Bacon</strong></p>
-			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
-		</div>
-		<div class="col-md-3 col-xs-12 pt-1 pl-2">
-			<i class="fa fa-question fa-3x mb-2" aria-hidden="true"></i>
-			<p class="m-0"><strong>Bacon</strong></p>
-			<p class="text-justify">Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet.</p>
-		</div>
-	</div>
-
-	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
-		<div class="col-md-5 offset-md-1 col-xs-12 pt-1">
-			<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12448.749105061224!2d-9.30629315!3d38.7364645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92000ad2cef547fa!2sTaguspark%2C+SA!5e0!3m2!1sen!2spt!4v1484772437891" style="pointer-events: none;"></iframe> <!-- Must be used proper Google Maps API when deployed -->
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-12 pt-1 text-md-left text-xs-center">
-		<!-- Not properly aligned in mobile -->		
-			<ul style="list-style-type: none;">
-				<h4>Come visit us</h4>
+		<div class="col-md-5 col-xs-12 pt-1 text-md-center text-xs-center">
+			<ul style="list-style-type: none;" class="px-0">
+				<h4>Get in touch</h4>
 				<hr>
 				<li class="my-1">
 					<i class="fa fa-phone fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
@@ -98,10 +83,10 @@
 					<i class="fa fa-mobile fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
 					<span> +351 123 456 789</span>
 				</li>
-				<li class="my-1">
+				<!--<li class="my-1">
 					<i class="fa fa-map-marker fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
 					<span>Av. Lorem Ipsum, nº 123 </span>
-				</li>
+				</li>-->
 				<li class="my-1">
 					<i class="fa fa-envelope-o fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
 					<span>info@facswatches.pt</span>
@@ -116,54 +101,6 @@
 
 
 
-	<!--
-
-	<div class="row no-margin">
-		<div class="col-md-12 col-xs-12 splash" style="background-color: red">
-			<p>grvf</p>
-		</div>
-	</div>
-
-	<div class="row m-0">
-		<div class="col-md-12 col-xs-12 py-3 background-screen text-md-center text-xs-center" id="back2">
-
-			<h1 style="color:white">OUR BRANDS</h1>
-
-			<div class="row py-1">
-				<div class="col-md-6">
-					<p style="color:white; font-size: 2em">1</p>
-					<p style="color:white; font-size: 2em">1</p>
-					<p style="color:white; font-size: 2em">1</p>
-					<p style="color:white; font-size: 2em">1</p>
-				</div>
-
-				<div class="col-md-6">
-					<p style="color:white; font-size: 2em">2</p>
-					<p style="color:white; font-size: 2em">2</p>
-					<p style="color:white; font-size: 2em">2</p>
-					<p style="color:white; font-size: 2em">2</p>
-				</div>
-			</div>
-			
-		</div>
-	</div>
-
-	<div class="row m-0 text-md-center text-xs-center">
-		<div class="col-md-6 col-xs-6 py-3 background-screen " id="back3">
-			<p style="color:white; font-size: 2em">2</p>
-			<p style="color:white; font-size: 2em">2</p>
-			<p style="color:white; font-size: 2em">2</p>
-			<p style="color:white; font-size: 2em">2</p>
-			<p style="color:white; font-size: 2em">2</p>
-			<p style="color:white; font-size: 2em">2</p>
-		</div>
-		<div class="col-md-6 col-xs-6 p-0">
-			<div class="embed-responsive embed-responsive-4by3 maps">
-    			<iframe class="embed-responsive-item" style="position:absolute;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12448.749105061224!2d-9.30629315!3d38.7364645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92000ad2cef547fa!2sTaguspark%2C+SA!5e0!3m2!1sen!2spt!4v1484710434063" ></iframe>
-			</div>
-		</div>
-	</div> -->
-
 </template>
 
 
@@ -172,20 +109,20 @@
 	<div class="row no-margin splash-nav">
 		<table class="table text-md-center mb-0">
 			<tr>
-				<td class="col-md-3" style="background: rgba(28,28,28,0.7) ;">
-					<a class="" href="#">
-	    				<img src="/facsCropped.png" width="75" height="auto" style="margin: 0px 0px 0px 20px" alt="">
-  					</a>
+				<td class="col-md-3" style="background: rgba(28,28,28,0.7) ;" id="navIndex">
+					<a href="">
+    					<img src="/facsCropped.png" width="75" height="auto" style="margin: 0px 0px 0px 20px" alt="">
+    				</a>
 				</td>
-				<td class="col-md-3 hvr-shutter-out-horizontal">
+				<td class="col-md-3 hvr-shutter-out-horizontal" id="navSearch">
 					<i class="fa fa-search fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
 					<span>Search</span>
 				</td>
-				<td class="col-md-3 hvr-shutter-out-horizontal">
-					<i class="fa fa-map-marker fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
-					<span>Store</span>
+				<td class="col-md-3 hvr-shutter-out-horizontal" id="navAbout">
+					<i class="fa fa-question fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
+					<span>About Us</span>
 				</td>
-				<td class="col-md-3 hvr-shutter-out-horizontal">
+				<td class="col-md-3 hvr-shutter-out-horizontal" id="navContacts">
 					<i class="fa fa-phone fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
 					<span>Contacts</span>
 				</td>
@@ -202,24 +139,24 @@
 	<nav class="navbar navbar-dark navbar-fixed-top bg-inverse " style="border-bottom: 0.2em solid #ffcb00">
 	  	<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 	  	<div class="collapse navbar-toggleable-md" id="navbarResponsive">
-	    	<a class="navbar-brand" href="#">
-	    		<img class="center-block" src="facsCropped.png" width="75" height="auto" alt="">
+	    	<a class="navbar-brand" id="navIndex">
+	    		<img class="center-block" src="/facsCropped.png" width="75" height="auto" alt="">
 	    	</a>
 	    	<hr>
 	    	<div class="row text-xs-center">
-	    		<a class="nav-link" href="#" style="color:white">
+	    		<a class="nav-link" style="color:white" id="navSearch">
 					<i class="fa fa-search fa-fw" style="color:white;"></i>
 					<p class="no-line ">Search</p>
 				</a>
 	    	</div>
 	    	<div class="row text-xs-center my-1">
-	    		<a class="nav-link" href="#" style="color:white">
-					<i class="fa fa-map-marker fa-fw" style="color:white;"></i>
-					<p class="no-line">Store</p>
+	    		<a class="nav-link" style="color:white" id="navAbout">
+					<i class="fa fa-question fa-fw" style="color:white;"></i>
+					<p class="no-line">About Us</p>
 				</a>
 	    	</div>
 	    	<div class="row text-xs-center">
-	    		<a class="nav-link" href="#" style="color:white">
+	    		<a class="nav-link" style="color:white" id="navContacts">
 					<i class="fa fa-phone fa-fw" style="color:white;"></i>
 					<p class="no-line ">Contacts</p>
 				</a>

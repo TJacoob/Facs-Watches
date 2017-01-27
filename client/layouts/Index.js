@@ -30,3 +30,61 @@ function distinct(collection, field) {
     sort: {[field]: 1}, fields: {[field]: 1}
   }).map(x => x[field]), true);
 }
+
+Template.IndexNavbar.events({
+
+  "click #navIndex": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#indexTop").offset().top
+    }, 1000);
+  },
+  "click #navSearch": function(){
+    FlowRouter.go('/search');
+    $('html, body').animate({
+        scrollTop: $("#productSearchTop").offset().top
+    }, 0);
+  },
+  "click #navAbout": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top
+    }, 2000);
+  },
+  "click #navContacts": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#contacts").offset().top
+    }, 1000);
+  },
+
+});
+
+Template.IndexNavbarMobile.events({
+
+  "click #navIndex": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#indexTop").offset().top
+    }, 1000);
+  },
+  "click #navSearch": function(){
+    FlowRouter.go('/search');
+    $('html, body').animate({
+        scrollTop: $("#productSearchTop").offset().top
+    }, 0);
+  },
+  "click #navAbout": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top
+    }, 2000);
+  },
+  "click #navContacts": function(){
+    FlowRouter.go('/index');
+    $('html, body').animate({
+        scrollTop: $("#contacts").offset().top
+    }, 1000);
+  },
+  
+});

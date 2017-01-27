@@ -1,11 +1,9 @@
 <!-- AutoForm template for adding a product in AdminAddProduct.html -->
 
-<template name="NewProduct">
-
+<template name="newProduct">
 		<div class="row mx-0 p-1">
 			<div class="col-md-12">
-				{{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form" }}
+				{{> quickForm collection="Products" id="insertProductForm" type="insert" class="new-product-form" buttonClasses="btn btn-invert hvr-fade-invert submitRedirect"}}
 			</div>
 		</div>
-
 </template>

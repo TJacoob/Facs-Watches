@@ -219,15 +219,15 @@
 
 /* Icons CSS */
 
-.fa {
-
+.fa:hover {
+  cursor:pointer;
 }
 
 .fa-trash {
-    color: red ; /* Replace with desired color */
+    color: #ff0000 ; /* Replace with desired color */
 }
 .fa-trash:hover {
-    color: red ; /* Replace with desired color */
+    color: #d10000 ; /* Replace with desired color */
 }
 
 .fa-pencil {
@@ -420,3 +420,34 @@
   background-color: #1c1c1c;
   color: white;
 }
+
+.btn-invert
+{
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #1c1c1c ; 
+}
+
+.hvr-fade-invert {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+  cursor:pointer;
+}
+.hvr-fade-invert:hover, .hvr-fade-invert:focus, .hvr-fade-invert:active {
+  background-color: white;
+  color: #1c1c1c; 
+}
+
+a, a:hover, a:visited, a:link, a:active
+{
+  text-decoration: none ;
+  color: inherit;
+}
+

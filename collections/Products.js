@@ -43,15 +43,18 @@ ProductsSchema = new SimpleSchema({
 	},
 	picture: {
 	    type: String,
+	    //optional: true,
 	    autoform: {
 		    afFieldInput: {
 		        type: 'fileUpload',
 		        collection: 'Images',
-		        //uploadTemplate: 'uploadField' // <- Optional
-		        //previewTemplate: 'uploadPreview' // <- Optional
+		        uploadTemplate: 'uploadForm', // <- Optional
+		        //previewTemplate: 'uploadedFiles', // <- Optional
 		    }
 	    }
   	}
 });
 
 Products.attachSchema( ProductsSchema );
+
+//class="form-control af-file-upload-capture"

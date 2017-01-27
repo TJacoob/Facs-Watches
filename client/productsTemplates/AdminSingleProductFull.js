@@ -38,7 +38,9 @@ Template.AdminSingleProductFull.events({
 	},
 	'click .fa-trash' : function(){
 		let id = FlowRouter.getParam('id') ;
-		if (confirm('Are you sure you want to delete ' + id + '?'))
+		var prod = Products.findOne({_id: id});
+
+		if (confirm('Are you sure you want to delete ' + prod.name + '?'))
 			{
 				Meteor.call('deleteProduct', id);
 				FlowRouter.go('AdminAllProduct');
