@@ -29,7 +29,9 @@
 
 				<!-- Both -->
 				<div class="col-md-6 col-xs-12">
-					<img class="img-product rounded my-2 mx-auto d-block" src="{{productImage.link}}" />
+					{{#each productImages}}
+						<img class="img-product rounded my-2 mx-auto d-block" src="{{this}}" />
+					{{/each}}
 				</div>
 
 				<!--Mobile -->

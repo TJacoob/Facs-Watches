@@ -20,6 +20,22 @@ Meteor.methods({
 });
 
 /* Collection Atributes */
+
+PictureLink = new SimpleSchema({
+	picture: {
+	    type: String,
+	    //optional: true,
+	    autoform: {
+		    afFieldInput: {
+		        type: 'fileUpload',
+		        collection: 'Images',
+		        //uploadTemplate: 'uploadForm', // <- Optional
+		        //previewTemplate: 'uploadedFiles', // <- Optional
+		    }
+	    }
+  	}
+});
+
 ProductsSchema = new SimpleSchema({
 	name: { 
 		type: String,
@@ -41,19 +57,39 @@ ProductsSchema = new SimpleSchema({
 		type: String,
 		label: "Type"
 	},
-	picture: {
-	    type: String,
-	    //optional: true,
-	    autoform: {
-		    afFieldInput: {
-		        type: 'fileUpload',
-		        collection: 'Images',
-		        uploadTemplate: 'uploadForm', // <- Optional
-		        //previewTemplate: 'uploadedFiles', // <- Optional
-		    }
-	    }
+  	pictures: {
+  		type: [PictureLink],
   	}
-});
+}); 
+
+/*
+
+ProductsSchema = new SimpleSchema({
+	ref: {
+		type: String,
+		label: "Reference",
+		unique: true,
+	},
+	name: {
+		type: String,
+		label: "Name",
+	},
+	brand: {
+		type: String,
+		label: "Name",
+	},
+	desc: {
+		type: String,
+		label: "Description",
+	},
+	type: {
+		type: String,
+		label: "Type",
+	},
+
+
+
+}); */
 
 Products.attachSchema( ProductsSchema );
 

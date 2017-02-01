@@ -58,6 +58,7 @@ Template.productSearch.helpers({
 	  var prod = Products.findOne({_id: this.p });
     if (typeof prod !== 'undefined')
     {
+      console.log(Images.findOne({_id:prod.picture}));
       return Images.findOne({_id:prod.picture});
     }
 	},

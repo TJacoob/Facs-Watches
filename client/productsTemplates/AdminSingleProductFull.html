@@ -20,7 +20,7 @@
 						<i class="fa fa-pencil fa-2x px-1" title="Edit Product"></i>
 						<i class="fa fa-trash fa-2x px-0" title="Delete Product"></i>
 						<hr>
-						<div class="col-md-6">
+						<div class="col-md-6 col-xs-12">
 							<h1 class="my-1">{{singleProduct.name}}</h1>
 							<h4>{{singleProduct.brand}}</h4>
 							<hr>
@@ -32,8 +32,12 @@
 							<p class="my-0">Type: {{singleProduct.type}}</p>
 							<p class="my-0">Decade: {{singleProduct.decade}}</p>
 						</div>
-						<div class="col-md-6">
-							<img class="img-product rounded my-2 mx-auto d-block" src="{{productImage.link}}" />
+						<div class="col-md-6 col-xs-12 ">
+							{{#each productImages}}
+								<div class="col-md-6 col-xs-12">
+									<img class="img-product rounded my-2 mx-auto d-block img-thumbnail" src="{{this}}" />
+								</div>
+							{{/each}}
 						</div>
 					</div>
 				{{/if}}
