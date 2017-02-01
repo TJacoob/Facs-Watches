@@ -4,8 +4,8 @@ Images = new FilesCollection({
   storagePath: Meteor.absolutePath + '/data',   // CHECK IF IT WORKS AFTER DEPLOYMENT
   downloadRoute: '/files/images',
   collectionName: 'Images',
-  chunkSize: 1024*2048,
-  throttle: 1024*512,
+  chunkSize: 2048*2048,
+  throttle: 2048*2048,
   permissions: 0755,
   allowClientCode: true,
   cacheControl: 'public, max-age=31536000',
