@@ -37,7 +37,10 @@ Template.search.helpers({
   },
   types: function() {
   	return distinct(Products,"type");
-  }
+  },
+  seasons: function() {
+    return distinct(Products,"season");
+  },
 });
 
 var empty = true ;
@@ -108,6 +111,36 @@ Template.search.events({
   		emptyType = true ;
 	}
   	PackageSearch.search("-", filter);
+  },
+  "click #searchOPSeason": function(){
+
+    if ((filter.season.indexOf(this.valueOf()) > -1)&&(!emptySeason) ) {
+    //In the array!
+
+      filter.season = deleteFrom(filter.season, this.valueOf());
+      if ( filter.season.length == 0 )
+      {
+        emptySeason = true ;
+      }
+    }
+    else if ((filter.season.indexOf(this.valueOf()) > -1)&&(emptySeason) ){
+    filter.season = [] ;
+    filter.season.push(this.valueOf());
+    emptySeason = false;  
+  } else {
+      filter.season.push(this.valueOf());
+      emptySeason = false ;
+  }
+
+    if (emptySeason)
+  {
+    for (i=0; i<distinct(Products,"season").length ; i++ )
+      {
+        filter.season.push(distinct(Products,"season")[i]);
+      }
+      emptySeason = true ;
+  }
+    PackageSearch.search("-", filter);
   }
 });
 

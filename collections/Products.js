@@ -35,7 +35,7 @@ PictureLink = new SimpleSchema({
 	    }
   	}
 });
-
+/*
 ProductsSchema = new SimpleSchema({
 	name: { 
 		type: String,
@@ -61,35 +61,58 @@ ProductsSchema = new SimpleSchema({
   		type: [PictureLink],
   	}
 }); 
+*/
 
-/*
 
 ProductsSchema = new SimpleSchema({
 	ref: {
 		type: String,
-		label: "Reference",
+		label: "Referência",
 		unique: true,
 	},
 	name: {
 		type: String,
-		label: "Name",
+		label: "Nome",
 	},
 	brand: {
 		type: String,
-		label: "Name",
+		label: "Marca",
 	},
 	desc: {
 		type: String,
-		label: "Description",
+		label: "Descrição",
 	},
 	type: {
 		type: String,
-		label: "Type",
+		label: "Tipo",
 	},
+	gender: {
+		type: String,
+		label: "Género",
+		allowedValues: ['Male', 'Female', 'Both'],
+	},
+	season: {
+		type: String,
+		label: "Anos",
+		//min: 0,
+	},
+	spotlight: {
+		type: Boolean,
+		label: "Em destaque",
+	},
+	available: {
+		type: Boolean,
+		label: "Disponível" ,
+		//defaultValue: true ,
+	},
+	pictures: {
+  		type: [PictureLink],
+  	},
 
 
 
-}); */
+
+});
 
 Products.attachSchema( ProductsSchema );
 

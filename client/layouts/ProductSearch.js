@@ -3,11 +3,12 @@ var options = {
   localSearch: true
 };
 
-var fields = ['name', 'brand','type','decade'];
-var filter = {name:"", brand:[], type:[] };
+var fields = ['name', 'brand','type','season'];
+var filter = {name:"", brand:[], type:[], season:[] };
 
 var emptyBrand = true ;
 var emptyType = true ;
+var emptySeason = true ;
 
 PackageSearch = new SearchSource('products', fields, options);
 
@@ -20,8 +21,10 @@ Template.productSearch.onRendered(function() {
         self.subscribe('files.images.all');
         filter.brand = distinct(Products,"brand");
         filter.type = distinct(Products,"type");
-        empty = true ;
+        filter.season = distinct(Products, "season");
+        emptyBrand = true ;
         emptyType = true ;
+        emptySeason = true ;
     });
     PackageSearch.search("",filter);
 
@@ -58,7 +61,6 @@ Template.productSearch.helpers({
 	  var prod = Products.findOne({_id: this.p });
     if (typeof prod !== 'undefined')
     {
-      console.log(Images.findOne({_id:prod.picture}));
       return Images.findOne({_id:prod.picture});
     }
 	},
@@ -100,9 +102,6 @@ Template.productSearch.events({
     else
     {
       BlazeLayout.render('productSearch', {main: 'filterBrand'});
-      Session.set({
-        currentFilter: "Brand"
-      });
     }
   },
 
@@ -117,6 +116,20 @@ Template.productSearch.events({
     else
     {
       BlazeLayout.render('productSearch', {main: 'filterType'});
+    }
+  },
+
+  'click #showSeasonFilter': function(){
+    if ( Session.get("currentFilter") == "Season" )
+    {
+      BlazeLayout.render('productSearch', {main: ''});
+      Session.set({
+        currentFilter: null 
+      });
+    }
+    else
+    {
+      BlazeLayout.render('productSearch', {main: 'filterSeason'});
     }
   },
 
@@ -200,6 +213,46 @@ Template.productSearch.events({
     PackageSearch.search("-", filter);
   },
 
+  'click .seasonFilter': function(){
+
+    /* Filtragem dos resultados */
+    if ((filter.season.indexOf(this.valueOf()) > -1)&&(!emptySeason) ) {
+    //In the array!
+      filter.season = deleteFrom(filter.season, this.valueOf());
+      if ( filter.season.length == 0 )
+      {
+        emptySeason = true ;
+      }
+    }
+
+    // Not in the Array, but array is empty
+    else if ((filter.season.indexOf(this.valueOf()) > -1)&&(emptySeason) )
+    {
+      filter.season = [] ;
+      filter.season.push(this.valueOf());
+      emptySeason = false;  
+    }
+
+    // Not in the Array, but array is not empty
+    else
+    {
+      filter.season.push(this.valueOf());
+      emptySeason=false ;
+    }
+
+    // Array is empty, pushes all brands to the filter
+    if (emptySeason)
+    {
+      for (i=0; i<distinct(Products,"season").length ; i++ )
+      {
+        filter.season.push(distinct(Products,"season")[i]);
+      } 
+      emptySeason = true ;
+    }
+
+    PackageSearch.search("-", filter);
+  },
+
 });
 
 
@@ -247,6 +300,29 @@ Template.filterType.onRendered(function(){
     for (i=0; i<filter.type.length ; i++ )
     {
       document.getElementById("f-"+filter.type[i]).checked = true;
+    }
+  }
+
+
+});
+
+Template.filterSeason.helpers({
+  seasons: function() {
+    return distinct(Products,"season");
+  }
+});
+
+Template.filterSeason.onRendered(function(){
+  
+  Session.set({
+    currentFilter: "Season"
+  });
+
+  if ( filter.season.length != distinct(Products,"season").length )
+  {
+    for (i=0; i<filter.season.length ; i++ )
+    {
+      document.getElementById("f-"+filter.season[i]).checked = true;
     }
   }
 

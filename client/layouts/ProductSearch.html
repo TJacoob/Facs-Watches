@@ -24,10 +24,13 @@
 			<span>Filter by:</span>
 		</div>
 		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showBrandFilter">
-			<span>Brand</span>
+			<span>Marca</span>
 		</div>
 		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showTypeFilter">
-			<span>Type</span>
+			<span>Tipo</span>
+		</div>
+		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showSeasonFilter">
+			<span>Época</span>
 		</div>
 	</div>
 
@@ -37,10 +40,13 @@
 			<span>Filter by:</span>
 		</div>
 		<div class="col-xs-6 px-0" id="showBrandFilter">
-			<span>Brand</span>
+			<span>Marca</span>
 		</div>
 		<div class="col-xs-6 px-0" id="showTypeFilter">
-			<span>Type</span>
+			<span>Tipo</span>
+		</div>
+		<div class="col-xs-6 px-0" id="showSeasonFilter">
+			<span>Época</span>
 		</div>
 	</div>
 
@@ -128,6 +134,18 @@
 			<div class="col-md-3 text-md-left col-xs-6 text-xs-left">
 				<label class="form-check form-check-inline no-margin my-0">
 						<input class="form-check-input mx-0 typeFilter" type="checkbox" id="f-{{this}}"> {{this}}
+				</label>
+			</div>
+		{{/each}}
+	</div>
+</template>
+
+<template name="filterSeason">
+	<div class="row">
+		{{#each seasons}}
+			<div class="col-md-3 text-md-left col-xs-6 text-xs-left">
+				<label class="form-check form-check-inline no-margin my-0">
+						<input class="form-check-input mx-0 seasonFilter" type="checkbox" id="f-{{this}}"> {{this}}
 				</label>
 			</div>
 		{{/each}}

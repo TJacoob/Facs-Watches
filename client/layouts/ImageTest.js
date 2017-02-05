@@ -8,16 +8,6 @@ Template.uploadForm.onCreated(function () {
   this.subscribe('products');
 });
 
-Template.uploadedFiles.onCreated(function () {
-  this.subscribe('files.images.all');
-
-});
-
-Template.uploadedFiles.helpers({
-  uploadedFiles: function () {
-    return Images.find();
-  }
-});
 
 Template.uploadForm.helpers({
   currentUpload: function () {
