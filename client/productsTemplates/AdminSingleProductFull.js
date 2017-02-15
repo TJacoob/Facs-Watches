@@ -5,7 +5,8 @@ Template.AdminSingleProductFull.onCreated(function() {
 	self.autorun(function(){
 		var id = FlowRouter.getParam('id');
 		self.subscribe('singleProduct', id);
-		self.subscribe('singleImage', id);
+		//self.subscribe('files.images.all');
+		self.subscribe('files.images.multiple', id);
 	});
 });
 
@@ -18,12 +19,27 @@ Template.AdminSingleProductFull.helpers({
 		var id = FlowRouter.getParam('id');
 		return id ;
 	},
-	productImage: function(){
+	productImages: function(){
 		var id = FlowRouter.getParam('id');
 		var prod = Products.findOne({_id: id});
-		return Images.findOne({_id:prod.picture});
-	}
+		//console.log(prod.pictures[0]);
+		return Images.find().map( 
+			function(obj){
+				return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
+			 }) ;
+		//return Images.find({}).map( function(obj){ return{"imgLink": Images.find({id: obj._id}) }; } );
+		//console.log( Images.find({}) );
+		//return Images.find({});
+		/*var imageArray = [];
+		for ( i=0 ; i<prod.pictures.length; i++ )
+		{
+			imageArray.push(prod.pictures[i].picture);
+		};
+		
+		console.log(Images.find({"_id": { "$in": imageArray }}).cursor);
 
+		return Images.find({"_id": { "$in": imageArray }}).cursor; */
+	},
 });
 
 Template.AdminSingleProductFull.events({

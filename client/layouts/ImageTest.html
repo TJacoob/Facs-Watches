@@ -1,21 +1,10 @@
 <template name="uploadForm">
-	{{#if hasUploaded}}
-		<div class="row">
-			<div class="col-md-6 col-xs-12">
-				<img class="card-img-top condensed-img p-1" src="{{justUploaded.link}}" alt="-">
-				<p>{{justUploaded.name}}</p>
-			</div>
-
-		</div>
-	{{else}}
-		{{#with currentUpload}}
-		    Uploading <b>{{file.name}}</b>: 
-		    <span id="progress">{{progress.get}}%</span>
-		{{else}}
-		    <input id="fileInput" type="file" class="form-control af-file-upload-capture"/>
-		    <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
-		{{/with}}
-	{{/if}}
+  {{#with currentUpload}}
+    Uploading <b>{{file.name}}</b>:
+    <span id="progress">{{progress.get}}%</span>
+  {{else}}
+    <input id="fileInput" type="file" />
+  {{/with}}
 </template>
 
 <template name="uploadedFiles">

@@ -1,9 +1,12 @@
 SearchSource.defineSource('products', function(searchText, options) {
 
+  //console.log(options);
+
   var filter = options ;
 
   var brands = [];
   var types = [];
+  var seasons = [];
 
   for (i=0; i<filter.brand.length ; i++ )
   {
@@ -12,6 +15,10 @@ SearchSource.defineSource('products', function(searchText, options) {
   for (i=0; i<filter.type.length ; i++ )
   {
     types.push(buildRegExp(filter.type[i]));
+  } 
+  for (i=0; i<filter.season.length ; i++ )
+  {
+    seasons.push((filter.season[i]));
   } 
 
   var options = {sort: {isoScore: -1}, limit: 20};
@@ -22,6 +29,7 @@ SearchSource.defineSource('products', function(searchText, options) {
       {name: buildRegExp(filter.name)},
       {brand: { $in: brands } },
       {type: { $in: types } },
+      {season: { $in: seasons } },
     ]};
 
     return Products.find(selector2, options).fetch();

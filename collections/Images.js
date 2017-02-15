@@ -1,12 +1,12 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
 Images = new FilesCollection({
-  storagePath: Meteor.absolutePath + '/data',   // CHECK IF IT WORKS AFTER DEPLOYMENT
+  storagePath: '../../../data',   // CHECK IF IT WORKS AFTER DEPLOYMENT
   downloadRoute: '/files/images',
   collectionName: 'Images',
-  chunkSize: 1024*2048,
-  throttle: 1024*512,
-  permissions: 0755,
+  chunkSize: 2048*2048,
+  throttle: 2048*2048,
+  permissions: 777,
   allowClientCode: true,
   cacheControl: 'public, max-age=31536000',
   onbeforeunloadMessage: function () {
@@ -28,15 +28,7 @@ Images = new FilesCollection({
     }
     // Must return true to continue download
     return true;
-  }/*,
-  protected: function (fileObj) {
-    // Check if user is own this file
-    if (fileObj.meta.owner === this.userId) {
-      return true;
-    } else {
-      return false;
-    }
-  }*/
+  }
 });
 
 

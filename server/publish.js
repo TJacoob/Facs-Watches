@@ -5,6 +5,8 @@
 	return Products.find();
 });*/
 
+//import Images from 'Images.js';
+
 Meteor.publish('singleProduct', function(id){
 	check(id, String);
 	return Products.find({_id: id});
@@ -13,6 +15,18 @@ Meteor.publish('singleProduct', function(id){
 /* Image Testing */
 Meteor.publish('files.images.all', function () {
     return Images.find().cursor;
+});
+
+Meteor.publish('files.images.multiple', function (id) {
+    check(id, String);
+    var p = Products.findOne({_id: id});
+    var imageArray = [];
+    for ( i=0 ; i<p.pictures.length; i++ )
+    {
+      imageArray.push(p.pictures[i].picture);
+    };
+    
+    return Images.find({"_id": { "$in": imageArray }}).cursor;
 });
 
 Meteor.publish('singleImage', function(id){

@@ -31,10 +31,13 @@
 
 	<div class="row no-margin px-1" style=" border-bottom: 0.3em #cca300 solid; background-color: #333333;">
 		<button class="btn btn-filter my-0_5" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  		  Brands
+  		  Marcas
   		</button>
   		<button class="btn btn-filter my-0_5" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-  		  Types
+  		  Tipos
+  		</button>
+  		<button class="btn btn-filter my-0_5" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+  		  Épocas
   		</button>
 		<div class="collapse" id="collapseExample">
   			<div class="card card-block py-0_5 mb-0_5">
@@ -54,6 +57,15 @@
 				{{/each}}
   			</div>
 		</div>
+		<div class="collapse" id="collapseExample2">
+  			<div class="card card-block py-0_5 mb-0_5">
+    			{{#each seasons}}
+					<label class="form-check form-check-inline no-margin my-0">
+  						<input class="form-check-input mx-0" type="checkbox" id="searchOPSeason"> {{this}}
+					</label>				
+				{{/each}}
+  			</div>
+		</div>
 	</div>
 
 	<div class="row no-margin">
@@ -64,26 +76,30 @@
 					<span class="sr-only">Loading...</span>
 				{{else}}
 					<thead>
-						<th class="col-md-3">ID</th>
-						<th class="col-md-3">Name</th>
-						<th class="col-md-3">Brand</th>
-						<th class="col-md-2">Type</th>
-						<th class="col-md-1 text-md-right">Actions</th>
+						<th class="col-md-2">Ref.</th>
+						<th class="col-md-3">Nome</th>
+						<th class="col-md-2">Marca</th>
+						<th class="col-md-2">Tipo</th>
+						<th class="col-md-2">Época</th>
+						<th class="col-md-1 text-md-right">Ações</th>
 					</thead>
 					<tbody>
 						{{#each products}}
 							<tr>
-								<th class="col-md-3">
-									{{{_id}}}
+								<th class="col-md-2">
+									{{{ref}}}
 								</th>
 								<th class="col-md-3">
 									{{{name}}}
 								</th>
-								<td class="col-md-3">
+								<td class="col-md-2">
 									{{{brand}}}
 								</td>
 								<td class="col-md-2">
 									{{{type}}}
+								</td>
+								<td class="col-md-2">
+									{{{season}}}
 								</td>
 								<td class="col-md-1 text-md-right">
 									<a class="no-padding" href="/admin/product/{{_id}}">

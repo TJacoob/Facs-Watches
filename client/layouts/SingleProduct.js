@@ -3,7 +3,7 @@ Template.singleProduct.onCreated(function() {
 	self.autorun(function(){
 		var id = FlowRouter.getParam('id');
 		self.subscribe('singleProduct', id);
-		self.subscribe('singleImage', id);
+		self.subscribe('files.images.multiple', id);
 	});
 });
 
@@ -12,10 +12,11 @@ Template.singleProduct.helpers({
 		var id = FlowRouter.getParam('id');
 		return Products.findOne({_id: id});
 	},
-	productImage: function(){
-		var id = FlowRouter.getParam('id');
-		var prod = Products.findOne({_id: id});
-		return Images.findOne({_id:prod.picture});
+	productImages: function(){
+		return Images.find().map( 
+			function(obj){
+				return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
+			 }) ;
 	}
 
 });
