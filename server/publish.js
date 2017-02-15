@@ -5,6 +5,8 @@
 	return Products.find();
 });*/
 
+//import Images from 'Images.js';
+
 Meteor.publish('singleProduct', function(id){
 	check(id, String);
 	return Products.find({_id: id});
