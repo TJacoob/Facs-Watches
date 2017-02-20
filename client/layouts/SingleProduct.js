@@ -15,6 +15,7 @@ Template.singleProduct.helpers({
 	productImages: function(){
 		return Images.find().map( 
 			function(obj){
+				//Isto tá martelado
 				return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
 			 }) ;
 	}

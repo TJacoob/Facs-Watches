@@ -100,6 +100,10 @@ ProductsSchema = new SimpleSchema({
 		type: Boolean,
 		label: "Em destaque",
 	},
+	special: {
+		type: Boolean,
+		label: "Projeto Pessoal",
+	},
 	available: {
 		type: Boolean,
 		label: "Disponível" ,

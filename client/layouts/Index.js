@@ -96,7 +96,7 @@ Template.IndexNavbarMobile.events({
     FlowRouter.go('/index');
     $('html, body').animate({
         scrollTop: $("#contacts").offset().top
-    }, 1500);
+    }, 2000);
   },
   
 });

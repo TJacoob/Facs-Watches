@@ -57,13 +57,27 @@ Template.productSearch.onRendered(function() {
 
 Template.productSearch.helpers({
 
-	productImage: function(){
+	/*
+  productImage: function(){
 	  var prod = Products.findOne({_id: this.p });
     if (typeof prod !== 'undefined')
     {
-      return Images.findOne({_id:prod.picture});
+      console.log(Images.findOne({_id:prod.pictures}));
+      return Images.findOne({_id:prod.pictures[0]});
     }
-	},
+	}, */
+
+  productImage: function(){
+    var prod = Products.findOne({_id: this.p });
+    if (typeof prod !== 'undefined')
+    {
+      //Mais martelado era dificil 
+      return Images.find({_id:prod.pictures[0].picture}).map( 
+        function(obj){
+          return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
+         }) ;
+    }
+  },
 
 	products: function() {
     return PackageSearch.getData({
