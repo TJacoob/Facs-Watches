@@ -45,6 +45,12 @@ Template.IndexNavbar.events({
         scrollTop: $("#productSearchTop").offset().top
     }, 0);
   },
+  "click #navSpecial": function(){
+    FlowRouter.go('/special');
+    $('html, body').animate({
+        scrollTop: $("#productSearchTop").offset().top
+    }, 0);
+  },
   "click #navAbout": function(){
     FlowRouter.go('/index');
     $('html, body').animate({
@@ -74,6 +80,12 @@ Template.IndexNavbarMobile.events({
         scrollTop: $("#productSearchTop").offset().top
     }, 0);
   },
+  "click #navSpecial": function(){
+    FlowRouter.go('/special');
+    $('html, body').animate({
+        scrollTop: $("#productSearchTop").offset().top
+    }, 0);
+  },
   "click #navAbout": function(){
     FlowRouter.go('/index');
     $('html, body').animate({
@@ -84,7 +96,7 @@ Template.IndexNavbarMobile.events({
     FlowRouter.go('/index');
     $('html, body').animate({
         scrollTop: $("#contacts").offset().top
-    }, 1000);
+    }, 1500);
   },
   
 });

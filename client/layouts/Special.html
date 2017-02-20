@@ -1,0 +1,76 @@
+<template name="special">
+
+	<div id="productSearchTop">
+	</div>
+
+	{{> Navbars}}
+
+	<div class="row m-0 p-3 text-md-center text-xs-center background-screen" id="back4">
+		<hr>
+		<hr>
+		<hr>
+		<hr>
+		<div class="col-md-12 col-xs-12 m-0 input-group">
+			<p>Texto</p>
+		</div>
+	</div>
+
+	<!-- Reformular o display de cada cenazinha aqui -->
+
+	<div class="row m-1 text-md-center text-xs-center">
+		<div class="col-md-10 offset-md-1 px-0">
+			{{#if isLoading}}
+				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
+					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
+					<span class="sr-only">Loading...</span>
+				</div>
+			{{else}}
+				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
+					{{#each products}}
+						<!-- Desktop -->
+						<div class="col-md-4 hidden-md-down py-3">
+							<div class="card">
+								{{#with p=this._id}}
+			    					<img class="card-img-top condensed-img p-1" src="{{productImage.link}}" alt="Card image cap">
+			  					{{/with}}
+			  					<hr>
+								<div class="card-block pt-0">
+									<h4 class="card-title">{{name}}</h4>
+									<p class="card-subtitle">{{brand}}</p>
+								</div>
+								<div class="card-footer hvr-fade">
+									<a href="/product/{{_id}}">
+										<p class="my-0">See more of this product
+											<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i>
+										</p>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Mobile -->
+						<div class="row is-flex-mobile px-0 py-0 hidden-lg-up my-0" style="border-top: 1px solid #1c1c1c">
+							<div class="col-xs-3">
+								{{#with p=this._id}}
+			    					<img class="img-thumbnail" src="{{productImage.link}}" alt="Card image cap">
+			  					{{/with}}
+							</div>
+							<div class="col-xs-7">
+								<span>{{name}}</span>
+								<br>
+								<span>{{brand}}</span>
+							</div>
+							<div class="col-xs-2" >
+								<a href="/product/{{_id}}">
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					{{/each}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+
+
+</template>
