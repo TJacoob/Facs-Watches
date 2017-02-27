@@ -29,40 +29,12 @@ PictureLink = new SimpleSchema({
 		    afFieldInput: {
 		        type: 'fileUpload',
 		        collection: 'Images',
-		        //uploadTemplate: 'uploadForm', // <- Optional
+		        uploadTemplate: 'uploadForm', // <- Optional
 		        //previewTemplate: 'uploadedFiles', // <- Optional
 		    }
 	    }
   	}
 });
-/*
-ProductsSchema = new SimpleSchema({
-	name: { 
-		type: String,
-		label: "Name"
-	},
-	desc: {
-		type: String,
-		label: "Description"
-	},
-	brand: {
-		type: String,
-		label: "Brand"
-	},
-	decade: {
-		type: Number,
-		label: "Decade"
-	},
-	type: {
-		type: String,
-		label: "Type"
-	},
-  	pictures: {
-  		type: [PictureLink],
-  	}
-}); 
-*/
-
 
 ProductsSchema = new SimpleSchema({
 	ref: {
@@ -112,12 +84,6 @@ ProductsSchema = new SimpleSchema({
 	pictures: {
   		type: [PictureLink],
   	},
-
-
-
-
 });
 
 Products.attachSchema( ProductsSchema );
-
-//class="form-control af-file-upload-capture"

@@ -9,15 +9,22 @@ Template.index.onRendered(function() {
 
 Template.index.helpers({
 
-    spotlight: function() {
-        return Products.find({}, {limit: 3});
-        /* Should be fixed to display spotlighted only */
-  	},
-
-  	productImage: function(){
-		var prod = Products.findOne({_id: this.p });
-		return Images.findOne({_id:prod.picture});
+  spotlight: function() {
+      return Products.find({}, {limit: 3});
+      /* Should be fixed to display spotlighted only */
 	},
+
+  productImage: function(){
+    var prod = Products.findOne({_id: this.p });
+    if (typeof prod !== 'undefined')
+    {
+      //Mais martelado era dificil 
+      return Images.find({_id:prod.pictures[0].picture}).map( 
+        function(obj){
+          return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
+         }) ;
+    }
+  },
 
 	brands: function() {
   		return distinct(Products,"brand");

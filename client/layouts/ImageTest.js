@@ -1,13 +1,12 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
-Template.uploadForm.onCreated(function () {
+Template.uploadForm.onRendered(function () {
   this.currentUpload = new ReactiveVar(false);
   this.hasUploaded = new ReactiveVar(false);
   this.justUploaded = new ReactiveVar(false);
   this.subscribe('files.images.all');
   this.subscribe('products');
 });
-
 
 Template.uploadForm.onCreated(function () {
   this.currentUpload = new ReactiveVar(false);
@@ -16,6 +15,9 @@ Template.uploadForm.onCreated(function () {
 Template.uploadForm.helpers({
   currentUpload: function () {
     return Template.instance().currentUpload.get();
+  },
+  justUploaded: function () {
+    return Template.instance().justUploaded.get();
   }
 });
 
@@ -37,13 +39,21 @@ Template.uploadForm.events({
       upload.on('end', function (error, fileObj) {
         if (error) {
           alert('Error during upload: ' + error);
+          template.currentUpload.set(false);
         } else {
           alert('File "' + fileObj.name + '" successfully uploaded');
         }
-        template.currentUpload.set(false);
+        template.justUploaded.set(true);
+        console.log(this);
+        console.log(fileObj);
+        //document.getElementsByName("pictures.0.picture").value = fileObj ;
+        //document.getElementById("fileInput").value = fileObj ;
+
+        console.log(document.getElementsByName("pictures.0.picture"));
       });
 
       upload.start();
     }
   }
 });
+

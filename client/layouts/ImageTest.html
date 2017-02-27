@@ -3,7 +3,11 @@
     Uploading <b>{{file.name}}</b>:
     <span id="progress">{{progress.get}}%</span>
   {{else}}
-    <input id="fileInput" type="file" />
+    {{#with justUploaded}}
+      <p>something</p>
+    {{else}}
+      <input id="fileInput" data-files-collection-upload class="form-control af-file-upload-capture" type="file" />
+    {{/with}}
   {{/with}}
 </template>
 
