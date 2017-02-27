@@ -23,7 +23,8 @@ Meteor.publish('files.images.multiple', function (id) {
     var imageArray = [];
     for ( i=0 ; i<p.pictures.length; i++ )
     {
-      imageArray.push(p.pictures[i].picture);
+      if ( p.pictures[i].picture )
+        imageArray.push(p.pictures[i].picture);
     };
     
     return Images.find({"_id": { "$in": imageArray }}).cursor;

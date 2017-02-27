@@ -43,11 +43,3 @@ Template.AdminAddProduct.rendered = function(){
     element.removeClass("active");
 }
 
-AutoForm.hooks({
-
-    insertProductForm: {
-        onSuccess: function(){
-            FlowRouter.go("/admin/product/all");
-        }
-    }
-})

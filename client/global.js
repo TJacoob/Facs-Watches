@@ -2,11 +2,25 @@ import { Meteor } from 'meteor/meteor'
 
 import 'bootstrap';
 
+AutoForm.hooks({
 
-$('.maps').click(function () {
-    $('.maps iframe').css("pointer-events", "auto");
-});
+    insertProductForm: {
+        onSuccess: function(){
+            FlowRouter.go("/admin/product/all");
+        }
+    },
+})
 
-$( ".maps" ).mouseleave(function() {
-  $('.maps iframe').css("pointer-events", "none"); 
+AutoForm.addHooks(null, {
+  before: {
+    update: function(doc) {
+      _.each(doc.$set, function(value, setter) {
+        if (_.isArray(value)) {
+          var newValue = _.compact(value);
+          doc.$set[setter] = newValue;
+        }
+      });
+      return doc;
+    }
+  }
 });

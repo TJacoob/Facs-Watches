@@ -5,8 +5,8 @@ Template.AdminSingleProductFull.onCreated(function() {
 	self.autorun(function(){
 		var id = FlowRouter.getParam('id');
 		self.subscribe('singleProduct', id);
-		//self.subscribe('files.images.all');
-		self.subscribe('files.images.multiple', id);
+		self.subscribe('files.images.all');
+		//self.subscribe('files.images.multiple', id);
 	});
 });
 
@@ -22,8 +22,15 @@ Template.AdminSingleProductFull.helpers({
 	productImages: function(){
 		var id = FlowRouter.getParam('id');
 		var prod = Products.findOne({_id: id});
+		var imgs = [] ;
+		for (i=0; i<prod.pictures.length ; i++ )
+		{
+			imgs.push(prod.pictures[i].picture );
+		} 
+		console.log(imgs );
 		//console.log(prod.pictures[0]);
-		return Images.find().map( 
+		// {_id:prod.pictures[0].picture} 
+		return Images.find({_id: { $in: imgs }}).map( 
 			function(obj){
 				return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
 			 }) ;
@@ -49,7 +56,7 @@ Template.AdminSingleProductFull.events({
 	'click .fa-arrow-left' : function(){
 		Session.set('editMode', false)
 	},
-	'click .fa-check' : function(){
+	'click .fa-times' : function(){
 		Session.set('editMode', !Session.get('editMode'))
 	},
 	'click .fa-trash' : function(){
@@ -61,6 +68,9 @@ Template.AdminSingleProductFull.events({
 				Meteor.call('deleteProduct', id);
 				FlowRouter.go('AdminAllProduct');
 			}
+	},
+	"click .submitEditRedirect" : function(){
+		Session.set('editMode', !Session.get('editMode'))
 	}
 });
 

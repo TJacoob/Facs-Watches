@@ -9,10 +9,10 @@
 				{{#if $.Session.get 'editMode'}}
 					<div class="row px-1">
 						<a href="/admin/product/all"><i class="fa fa-arrow-left fa-2x px-0" title="Go Back to All Products"></i></a>
-						<i class="fa fa-check fa-2x px-1" title="Return to Product Description" style="color:green"></i>
+						<i class="fa fa-times fa-2x px-1" title="Return to Product Description"></i>
 					</div>
 					<hr>
-					{{> quickForm collection="Products" id=updateProductId type="update" doc=singleProduct autosave=true buttonContent=false}}
+					{{> quickForm collection="Products" id=updateProductId type="update" doc=singleProduct autosave=false buttonClasses="btn btn-invert hvr-fade-invert mt-2 submitEditRedirect"}}
 
 				{{else}}
 					<div class="row px-1">

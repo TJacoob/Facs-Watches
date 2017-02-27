@@ -43,7 +43,7 @@ Template.uploadForm.events({
         } else {
           alert('File "' + fileObj.name + '" successfully uploaded');
         }
-        template.justUploaded.set(true);
+        //template.justUploaded.set(true);
         console.log(this);
         console.log(fileObj);
         //document.getElementsByName("pictures.0.picture").value = fileObj ;

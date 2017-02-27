@@ -1,5 +1,7 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
+
+
 Images = new FilesCollection({
   storagePath: '../../../data',   // CHECK IF IT WORKS AFTER DEPLOYMENT
   downloadRoute: '/files/images',
@@ -30,6 +32,3 @@ Images = new FilesCollection({
     return true;
   }
 });
-
-
-
