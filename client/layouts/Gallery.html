@@ -25,3 +25,31 @@
 	</script>
 
 </template>
+
+<template name="galleryMobile">
+
+	<div id="blueimp-gallery-carousel-mobile" class="blueimp-gallery blueimp-gallery-carousel mx-0" style="background-color: rgba(0,0,0,0);">
+	    <div class="slides"></div>
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="play-pause"></a>
+	</div>
+
+	<div id="links">
+	    {{#each productImages}}
+	    	<a href="{{this}}"></a>
+		{{/each}}
+	</div>
+
+	<script>
+		blueimp.Gallery(
+		    document.getElementById('links').getElementsByTagName('a'),
+		    {
+		        container: '#blueimp-gallery-carousel-mobile',
+		        carousel: true
+		    }
+		);
+	</script>
+
+</template>
