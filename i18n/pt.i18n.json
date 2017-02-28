@@ -1,0 +1,29 @@
+{
+	//Navbar
+	"nav-search": "Pesquisar" ,
+	"nav-personalprojects": "Projetos Pessoais",
+	"nav-about": "Sobre nós",
+	"nav-contacts": "Contactos",
+
+	//Index Page
+	"index-spotlight": "Peças em destaque",
+	"index-seeallprocucts": "Ver todos os nossos produtos",
+	"index-brands": "As nossas marcas",
+	"index-aboutus": "Sobre nós",
+	"index-aboutus-long": "Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.",
+	"index-contacts": "Entre em contacto connosco",
+
+	//Search Page
+	"search-filterby": "Filtrar por:",
+	"search-brand": "Marca",
+	"search-type": "Tipo",
+	"search-season": "Época",
+	"search-personalproject":"(Projeto Pessoal)",
+
+	//Special Products Page
+	"special-about": "Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.",
+
+	//Multireferenced
+	"productcard-seemore": "Ver mais informação",
+	"loading": "A carregar..."
+}

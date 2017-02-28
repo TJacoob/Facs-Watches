@@ -6,10 +6,7 @@
 	{{> Navbars}}
 
 	<div class="row m-0 p-3 text-md-center text-xs-center background-screen" id="back4">
-		<hr>
-		<hr>
-		<hr>
-		<hr>
+		<div style="height: 5em"></div>
 		<div class="col-md-12 col-xs-12 m-0 input-group">
 			<div class="input-group-addon">
 	      		<span><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -21,32 +18,32 @@
 	<!-- Desktop -->
 	<div class="row mx-0 text-md-center text-xs-center hidden-md-down" style="background-color: #1c1c1c; color:white" >
 		<div class="col-md-2 offset-md-1 p-1">
-			<span>Filter by:</span>
+			<span>{{_ "search-filterby"}}</span>
 		</div>
 		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showBrandFilter">
-			<span>Marca</span>
+			<span>{{_ "search-brand"}}</span>
 		</div>
 		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showTypeFilter">
-			<span>Tipo</span>
+			<span>{{_ "search-type"}}</span>
 		</div>
 		<div class="col-md-2 p-1 hvr-shutter-out-horizontal jq-searchbar" id="showSeasonFilter">
-			<span>Época</span>
+			<span>{{_ "search-season"}}</span>
 		</div>
 	</div>
 
 	<!-- Mobile -->
 	<div class="row mx-0 py-1 text-xs-center hidden-lg-up" style="background-color: #1c1c1c; color:white" >
 		<div class="col-xs-12 px-0 pb-1">
-			<span>Filter by:</span>
+			<span>{{_ "search-filterby"}}</span>
 		</div>
 		<div class="col-xs-6 px-0" id="showBrandFilter">
-			<span>Marca</span>
+			<span>{{_ "search-brand"}}</span>
 		</div>
 		<div class="col-xs-6 px-0" id="showTypeFilter">
-			<span>Tipo</span>
+			<span>{{_ "search-type"}}</span>
 		</div>
 		<div class="col-xs-6 px-0" id="showSeasonFilter">
-			<span>Época</span>
+			<span>{{_ "search-season"}}</span>
 		</div>
 	</div>
 
@@ -62,7 +59,7 @@
 			{{#if isLoading}}
 				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
 					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
-					<span class="sr-only">Loading...</span>
+					<span class="sr-only">{{_ "loading"}}</span>
 				</div>
 			{{else}}
 				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
@@ -71,19 +68,20 @@
 						<div class="col-md-4 hidden-md-down py-3">
 							<div class="card">
 								{{#with p=this._id}}
-			    					<img class="card-img-top condensed-img p-1" src="{{productImage}}" alt="Card image cap">
+			    					<img class="card-img-top img-fluid p-1" src="{{productImage}}" alt="Card image cap" style="height: 30vh">
 			  					{{/with}}
 			  					<hr>
 								<div class="card-block pt-0">
 									<h4 class="card-title">{{name}}</h4>
-									<p class="card-subtitle">{{brand}}</p>
 									{{#if this.special}}
-										<p class="card-text">(Projeto Pessoal)</p>
+										<p class="card-subtitle">{{brand}} : {{_ "search-personalproject"}}</p>
+									{{else}}
+										<p class="card-subtitle">{{brand}}</p>
 									{{/if}}
 								</div>
 								<div class="card-footer hvr-fade">
 									<a href="/product/{{_id}}">
-										<p class="my-0">See more of this product
+										<p class="my-0">{{_ "productcard-seemore"}}
 											<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i>
 										</p>
 									</a>
@@ -95,7 +93,7 @@
 						<div class="row is-flex-mobile px-0 py-0 hidden-lg-up my-0" style="border-top: 1px solid #1c1c1c">
 							<div class="col-xs-3">
 								{{#with p=this._id}}
-			    					<img class="img-thumbnail" src="{{productImage}}" alt="Card image cap">
+			    					<img class="img-thumbnail" src="{{productImage}}">
 			  					{{/with}}
 							</div>
 							<div class="col-xs-7">

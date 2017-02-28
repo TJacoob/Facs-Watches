@@ -13,13 +13,13 @@
 	</div>
 
 	<div class="row m-1 p-1 text-md-center text-xs-center">
-		<h1>Spotlight</h1>
+		<h1>{{_ "index-spotlight"}}</h1>
 		<div class="col-md-10 offset-md-1 px-0 py-1">
 			{{#each spotlight}}
 				<div class="col-md-4 col-xs-12">
 					<div class="card">
 						{{#with p=this._id}}
-	    					<img class="card-img-top condensed-img p-1" src="{{productImage}}" alt="Card image cap">
+	    					<img class="card-img-top condensed-img p-1" src="{{productImage}}">
 	  					{{/with}}
 	  					<hr>
 						<div class="card-block pt-0">
@@ -27,14 +27,14 @@
 							<p class="card-subtitle">{{brand}}</p>
 						</div>
 						<div class="card-footer hvr-fade">
-							<p onclick="window.location='/product/{{_id}}'" class="my-0">See more of this product<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
+							<p onclick="window.location='/product/{{_id}}'" class="my-0">{{_ "productcard-seemore"}}<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></p>
 						</div>
 					</div>
 				</div>
 			{{/each}}
 			<div class="col-md-6 offset-md-3 col-xs-12 mt-2">
 				<a href="/search" style="text-decoration: none">
-					<button type="button" class="btn btn-lg btn-block btn-invert hvr-fade-invert p-1 px-0">See All Products<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></button>
+					<button type="button" class="btn btn-lg btn-block btn-invert hvr-fade-invert p-1 px-0">{{_ "index-seeallprocucts"}}<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i></button>
 				</a>
 			</div>
 		</div>
@@ -44,7 +44,7 @@
 	<br>
 
 	<div class="row mx-0 my-1 mt-3 py-3 text-md-center text-xs-center background-screen" id="back2" style="color: white">
-		<h4>Our Brands</h4>
+		<h4>{{_ "index-brands"}}</h4>
 		<div class="col-md-10 offset-md-1 col-xs-12 pt-1">
 			{{#each brands}}
 				<div class="col-md-3 col-xs-6">
@@ -60,8 +60,8 @@
 
 	<div class="row m-1 mt-3 p-1 text-md-center text-xs-center">
 		<div class="col-md-5 offset-md-1 col-xs-12 text-justify pt-1 mt-1">
-			<h4>About us</h4>
-			<p>Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.</p>
+			<h4>{{_ "index-aboutus"}}</h4>
+			<p>{{_ "index-aboutus-long"}}</p>
 		</div>
 		<div class="col-md-5 col-xs-12 pt-1">
 			<img src="/back3.jpg" class="img-fluid rounded" style="vertical-align: middle;" />
@@ -74,7 +74,7 @@
 		</div>
 		<div class="col-md-5 col-xs-12 pt-1 text-md-center text-xs-center">
 			<ul style="list-style-type: none;" class="px-0">
-				<h4>Get in touch</h4>
+				<h4>{{_ "index-contacts"}}</h4>
 				<hr>
 				<li class="my-1">
 					<i class="fa fa-phone fa-2x fa-fw mr-1" aria-hidden="true" style="vertical-align: middle;"></i>
@@ -117,19 +117,23 @@
 				</td>
 				<td class="col-md-3 hvr-shutter-out-horizontal" id="navSearch">
 					<i class="fa fa-search fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
-					<span>Search</span>
+					<span>{{_ "nav-search"}}</span>
 				</td>
-				<td class="col-md-3 hvr-shutter-out-horizontal" id="navSpecial">
+				<td class="col-md-2 hvr-shutter-out-horizontal" id="navSpecial">
 					<i class="fa fa-user fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
-					<span>Projetos Pessoais</span>
+					<span>{{_ "nav-personalprojects"}}</span>
 				</td>
 				<td class="col-md-2 hvr-shutter-out-horizontal" id="navAbout">
 					<i class="fa fa-question fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
-					<span>About Us</span>
+					<span>{{_ "nav-about"}}</span>
 				</td>
 				<td class="col-md-2 hvr-shutter-out-horizontal" id="navContacts">
 					<i class="fa fa-phone fa-2x fa-fw" aria-hidden="true" style="vertical-align: middle;"></i>
-					<span>Contacts</span>
+					<span>{{_ "nav-contacts"}}</span>
+				</td>
+				<td class="col-md-1 " style="background: rgba(28,28,28,0.7);">
+					<img src="/flags/pt.png" class="cp" alt="Português" id="langPT">
+					<img src="/flags/us.png" class="cp" alt="English" id="langUS">
 				</td>
 			</tr>
 
@@ -151,28 +155,32 @@
 	    	<div class="row text-xs-center">
 	    		<a class="nav-link" style="color:white" id="navSearch">
 					<i class="fa fa-search fa-fw" style="color:white;"></i>
-					<p class="no-line ">Search</p>
+					<p class="no-line ">{{_ "nav-search"}}</p>
 				</a>
 	    	</div>
 	    	<div class="row text-xs-center my-1">
 	    		<a class="nav-link" style="color:white" id="navSpecial">
 					<i class="fa fa-question fa-fw" style="color:white;"></i>
-					<p class="no-line">Projetos Próprios</p>
+					<p class="no-line">{{_ "nav-personalprojects"}}</p>
 				</a>
 	    	</div>
 	    	<div class="row text-xs-center my-1">
 	    		<a class="nav-link" style="color:white" id="navAbout">
 					<i class="fa fa-question fa-fw" style="color:white;"></i>
-					<p class="no-line">About Us</p>
+					<p class="no-line">{{_ "nav-about"}}</p>
 				</a>
 	    	</div>
 	    	<div class="row text-xs-center">
 	    		<a class="nav-link" style="color:white" id="navContacts">
 					<i class="fa fa-phone fa-fw" style="color:white;"></i>
-					<p class="no-line ">Contacts</p>
+					<p class="no-line ">{{_ "nav-contacts"}}</p>
 				</a>
 	    	</div>
 	    	<hr>
+	    	<div class="row text-xs-center mb-1">
+	    		<img src="/flags/pt.png" class="cp" alt="Português" id="langPT">
+				<img src="/flags/us.png" class="cp" alt="English" id="langUS">
+	    	</div>
 	  	</div>
 	</nav>
 	

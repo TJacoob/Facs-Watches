@@ -10,7 +10,7 @@ Template.index.onRendered(function() {
 Template.index.helpers({
 
   spotlight: function() {
-      return Products.find({}, {limit: 3});
+      return Products.find({spotlight:true}, {limit: 3});
       /* Should be fixed to display spotlighted only */
 	},
 
@@ -70,6 +70,12 @@ Template.IndexNavbar.events({
         scrollTop: $("#contacts").offset().top
     }, 1000);
   },
+  "click #langPT": function(){
+    TAPi18n.setLanguage("pt") ;
+  },
+  "click #langUS": function(){
+    TAPi18n.setLanguage("en");
+  },
 
 });
 
@@ -104,6 +110,12 @@ Template.IndexNavbarMobile.events({
     $('html, body').animate({
         scrollTop: $("#contacts").offset().top
     }, 2000);
+  },
+  "click #langPT": function(){
+    TAPi18n.setLanguage("pt") ;
+  },
+  "click #langUS": function(){
+    TAPi18n.setLanguage("en");
   },
   
 });
