@@ -72,8 +72,10 @@
 		<div class="col-md-12 show-search-container">
 			<table class="table table-hover table-sm">
 				{{#if isLoading}}
-					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
-					<span class="sr-only">Loading...</span>
+					<div class="col-md-12 col-xs-12" style="min-height: 100vh">
+						<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
+						<span class="sr-only">Loading...</span>
+					</div>
 				{{else}}
 					<thead>
 						<th class="col-md-2">Ref.</th>

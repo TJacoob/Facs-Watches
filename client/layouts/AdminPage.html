@@ -1,20 +1,5 @@
 <!-- Main Admin Page. The main variable receives the actual content the user wants, like adding a product -->
 
-<!--<template name="AdminPage">
-	<header>
-		<h1>AdminPage</h1>
-		{{> loginButtons}}
-	</header>
-	<main>
-		<div id="side menu">
-			<a href="/admin/product/all">See All</a>
-			<a href="/admin/product/add">Add Product</a>
-		</div>
-		{{> Template.dynamic template=main}}
-	</main>
-</template> -->
-
-
 <!-- Splash Screen Template for the Admin Page -->
 <template name="AdminSplash">
 	<div class="row is-flex hidden-md-down">
@@ -46,7 +31,9 @@
 <template name="Navbar">
   	<ul class="sideNav no-padding"> 
     	<li class="sideNav-item">
-    		<p class="no-margin">HeartGold</p>
+    		<a href="/index">
+				<img src="/facsCropped.png" width="75" height="auto" alt="">
+			</a>
     	</li>
     	<li class="sideNav-item">
     		<p class="no-margin">{{> loginButtons}}</p>

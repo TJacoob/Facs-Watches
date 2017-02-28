@@ -19,5 +19,4 @@ Template.singleProduct.helpers({
 				return "/files/images/Images/" + String(obj._id) + "/original/" + String(obj._id) + String(obj.extensionWithDot) ;
 			 }) ;
 	}
-
 });
