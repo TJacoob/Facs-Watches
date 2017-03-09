@@ -41,7 +41,7 @@ Meteor.publish( 'products', function( search ) {
   check( search, Match.OneOf( String, null, undefined ) );
 
   let query      = {},
-      projection = { limit: 10, sort: { name: 1 } };
+      projection = { limit: 100, sort: { name: 1 } };
 
   if ( search ) {
     let regex = new RegExp( search, 'i' );
