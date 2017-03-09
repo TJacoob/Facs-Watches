@@ -82,7 +82,7 @@ Template.productSearch.helpers({
 	products: function() {
     return PackageSearch.getData({
       transform: function(matchText, regExp) {
-        return matchText.replace(regExp, "<b>$&</b>")
+        return matchText.replace(regExp, "$&")
       },
       sort: {isoScore: -1}
     });

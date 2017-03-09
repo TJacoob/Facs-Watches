@@ -31,6 +31,17 @@ Template.index.helpers({
 	},
 });
 
+Template.index.events({
+
+  "click #jumpSearch": function(){
+    console.log("here");
+    FlowRouter.go('/search');
+    $('html, body').animate({
+        scrollTop: $("#productSearchTop").offset().top
+    }, 0);
+  },
+
+});
 
 function distinct(collection, field) {
   return _.uniq(collection.find({}, {
@@ -76,6 +87,9 @@ Template.IndexNavbar.events({
   "click #langUS": function(){
     TAPi18n.setLanguage("en");
   },
+  "click #langIT": function(){
+    TAPi18n.setLanguage("it");
+  },
 
 });
 
@@ -116,6 +130,9 @@ Template.IndexNavbarMobile.events({
   },
   "click #langUS": function(){
     TAPi18n.setLanguage("en");
+  },
+  "click #langIT": function(){
+    TAPi18n.setLanguage("it");
   },
   
 });

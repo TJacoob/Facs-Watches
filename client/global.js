@@ -27,7 +27,7 @@ AutoForm.addHooks(null, {
 
 getUserLanguage = function () {
   // Put here the logic for determining the user language
-  return "en";
+  return "pt";
 };
 
 if (Meteor.isClient) {
