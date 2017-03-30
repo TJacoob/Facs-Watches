@@ -5,18 +5,18 @@
 	{{#if Template.subscriptionsReady }}
 
 		<!-- Desktop -->
-		<div class="row mx-0 background-screen hidden-md-down" id="back0">
-			<div class="col-md-6 px-0 fullscreen" style="background-color: rgba(10,10,10,0.7);">
-				<div style="height: 25vh;"></div>
+		<div class="row mx-0 hidden-md-down fullscreen" style="background-color: rgba(21,21,21,1);">
+			<div class="col-md-7 pl-3 " >
+				<div style="height: 20vh;"></div>
 				{{> gallery}}
 			</div>
-			<div class="col-md-5 px-3">
+			<div class="col-md-5 pl-1 pr-3">
 				<div style="height: 30vh;"></div>
 				<h1 class="text-md-right" style="color:white">{{singleProduct.name}}</h1>
 				<h4 class="text-md-right" style="color:white">{{singleProduct.brand}}</h4>
-				<hr class="my-2" style="background-color:white">
+				<hr class="my-2" style="background-color:#cca300">
 				<p class="text-md-justify" style="color:white">{{singleProduct.desc}}</p>
-				<hr class="my-2" style="background-color:white">
+				<hr class="my-2" style="background-color:#cca300">
 				<div class="col-md-4 mx-0 text-md-center">
 					<i class="fa fa-clock-o pr-1" style="color:white" aria-hidden="true"></i>
 					<span style="color:white">{{singleProduct.type}}</span>
@@ -33,17 +33,17 @@
 		</div>
 
 		<!-- Mobile -->
-		<div class="row mx-0 background-screen fullscreen hidden-lg-up" id="back0">
+		<div class="row mx-0 background-screen fullscreen hidden-lg-up" style="background-color: rgba(21,21,21,1);">
 			<div class="col-xs-12 px-2">
 				<div style="height: 10vh;"></div>
 				{{> galleryMobile}}
 			</div>
 			<div class="col-xs-12 mt-1 mb-3 px-2">
-				<h1 class="text-xs-right" style="color:white">{{singleProduct.name}}</h1>
-				<h4 class="text-xs-right" style="color:white">{{singleProduct.brand}}</h4>
-				<hr class="my-2" style="background-color:white">
+				<h1 class="text-xs-left" style="color:white">{{singleProduct.name}}</h1>
+				<h4 class="text-xs-left" style="color:white">{{singleProduct.brand}}</h4>
+				<hr class="my-2" style="background-color:#cca300">
 				<p class="text-justify" style="color:white">{{singleProduct.desc}}</p>
-				<hr class="my-2" style="background-color:white">
+				<hr class="my-2" style="background-color:#cca300">
 				<div class="col-md-4 mx-0 text-md-center">
 					<i class="fa fa-clock-o fa-fw pr-3" style="color:white" aria-hidden="true"></i>
 					<span style="color:white">{{singleProduct.type}}</span>

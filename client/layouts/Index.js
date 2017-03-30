@@ -36,9 +36,6 @@ Template.index.events({
   "click #jumpSearch": function(){
     console.log("here");
     FlowRouter.go('/search');
-    $('html, body').animate({
-        scrollTop: $("#productSearchTop").offset().top
-    }, 0);
   },
 
 });
