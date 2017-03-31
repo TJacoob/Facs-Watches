@@ -453,6 +453,7 @@
   transition-property: color, background-color;
   cursor:pointer;
 }
+
 .hvr-fade-invert:hover, .hvr-fade-invert:focus, .hvr-fade-invert:active {
   background-color: white;
   color: #1c1c1c; 
@@ -462,4 +463,47 @@ a, a:hover, a:visited, a:link, a:active
 {
   text-decoration: none ;
   color: inherit;
+}
+
+.img-showmore
+{
+  position: relative;
+  overflow: hidden; /* added */
+}
+
+.img-showmore a
+{
+  opacity: 0;
+  background-color: rgba(21,21,21,0.5);
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+}
+
+.img-showmore:hover a {
+  opacity: 1 ;
+  top: 0; /* added */
+  z-index: 500;
+  background-color: rgba(21,21,21,0.5);
+  visibility: visible;
+  transition: background-color 0.2s linear, opacity 0.2s linear;
+}
+
+.img-showmore:hover a span {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: white;    
+}
+/* added */
+.img-showmore a {
+    display: block;
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
 }

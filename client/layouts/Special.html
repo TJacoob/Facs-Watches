@@ -6,7 +6,7 @@
 	{{> Navbars}}
 
 	<div class="row m-0 p-3 background-screen" id="back4">
-		<div style="height: 5em"></div>
+		<div style="height: 4em"></div>
 		<div class="col-md-10 offset-md-1 col-xs-12 my-0 px-0">
 			<p style="color:white" class="text-justify">{{_ "special-about"}}</p>
 		</div>
@@ -14,57 +14,58 @@
 
 	<!-- Reformular o display de cada cenazinha aqui -->
 
-	<div class="row m-1 text-md-center text-xs-center">
-		<div class="col-md-10 offset-md-1 px-0">
+	<div class="row my-1 mx-0 text-md-center text-xs-center">
+		<div class="col-12 col-md-10 offset-md-1 px-0">
 			{{#if isLoading}}
 				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
 					<i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw py-3 mx-auto d-block"></i>
 					<span class="sr-only">{{_ "loading"}}</span>
 				</div>
 			{{else}}
-				<div class="col-md-12 col-xs-12" style="min-height: 100vh">
-					{{#each products}}
-						<!-- Desktop -->
-						<div class="col-md-4 hidden-md-down py-3">
-							<div class="card">
-								{{#with p=this._id}}
-			    					<img class="card-img-top condensed-img p-1" src="{{productImage}}" alt="Card image cap">
-			  					{{/with}}
-			  					<hr>
-								<div class="card-block pt-0">
-									<h4 class="card-title">{{name}}</h4>
-									<p class="card-subtitle">{{brand}}</p>
-								</div>
-								<div class="card-footer hvr-fade">
-									<a href="/product/{{_id}}">
-										<p class="my-0">{{_ "productcard-seemore"}}
-											<i class="fa fa-chevron-right fa-fw ml-1" aria-hidden="true"></i>
-										</p>
-									</a>
-								</div>
-							</div>
-						</div>
 
-						<!-- Mobile -->
-						<div class="row is-flex-mobile px-0 py-0 hidden-lg-up my-0" style="border-top: 1px solid #1c1c1c">
-							<div class="col-xs-3">
-								{{#with p=this._id}}
-			    					<img class="img-thumbnail" src="{{productImage.link}}" alt="Card image cap">
-			  					{{/with}}
-							</div>
-							<div class="col-xs-7">
-								<span>{{name}}</span>
-								<br>
-								<span>{{brand}}</span>
-							</div>
-							<div class="col-xs-2" >
-								<a href="/product/{{_id}}">
-									<i class="fa fa-chevron-right" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-					{{/each}}
+			<!-- Desktop -->
+			<div class="row m-0 hidden-md-down">
+				{{#each products}}
+					<div class="col-md-6">
+						{{#with p=this._id}}
+							<div class="img-showmore my-1">
+    							<img class="img-fluid p-0" src="{{productImage}}" style="width:100%; height:50vh">
+    							<a href="/product/{{p}}"><span class="fa fa-search-plus fa-5x img-showicon"></span></a>
+    						</div>
+	  					{{/with}}
+	  					<h4>{{name}}</h4>
+	  					{{#if this.special}}
+							<p>{{brand}} : {{_ "search-personalproject"}}</p>
+						{{else}}
+							<p>{{brand}}</p>
+						{{/if}}
+	  					<hr>
+					</div>
+				{{/each}}
+			</div>
+
+			<!-- Mobile -->
+			{{#each products}}
+				<div class="row is-flex-mobile px-1 py-0 hidden-lg-up my-0 mx-0">
+					<div class="col-xs-4">
+						{{#with p=this._id}}
+	    					<img class="img-fluid" src="{{productImage}}">
+	  					{{/with}}
+					</div>
+					<div class="col-xs-7">
+						<span>{{name}}</span>
+						<br>
+						<span>{{brand}}</span>
+					</div>
+					<div class="col-xs-1" >
+						<a href="/product/{{_id}}">
+							<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						</a>
+					</div>
 				</div>
+				<hr class="hidden-lg-up">
+			{{/each}}
+				
 			{{/if}}
 		</div>
 	</div>
