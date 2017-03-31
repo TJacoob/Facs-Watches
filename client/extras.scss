@@ -481,7 +481,7 @@ a, a:hover, a:visited, a:link, a:active
 .img-showmore:hover a {
   opacity: 1 ;
   top: 0; /* added */
-  z-index: 500;
+  z-index: 5;
   background-color: rgba(21,21,21,0.5);
   visibility: visible;
   transition: background-color 0.2s linear, opacity 0.2s linear;
