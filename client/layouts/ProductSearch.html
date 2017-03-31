@@ -69,7 +69,7 @@
 					<div class="col-md-6">
 						{{#with p=this._id}}
 							<div class="img-showmore my-1">
-    							<img class="img-fluid p-0" src="{{productImage}}" style="width:100%; height:50vh">
+    							<img class="img-fluid p-0" src="{{productImage}}" style="width:auto; height:50vh">
     							<a href="/product/{{p}}"><span class="fa fa-search-plus fa-5x img-showicon"></span></a>
     						</div>
 	  					{{/with}}
@@ -103,7 +103,7 @@
 						</a>
 					</div>
 				</div>
-				<hr>
+				<hr class="hidden-lg-up">
 			{{/each}}
 				
 			{{/if}}
