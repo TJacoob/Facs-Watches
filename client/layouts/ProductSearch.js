@@ -26,7 +26,11 @@ Template.productSearch.onRendered(function() {
         self.subscribe('files.images.all');
         filter.type = distinct(Products,"type");
         filter.season = distinct(Products, "season");
-              
+        if ( filter.brand.length == 0 )
+        {
+          console.log("ere");
+          filter.brand = distinct(Products,"brand");
+        }
         emptyType = true ;
         emptySeason = true ;
     });

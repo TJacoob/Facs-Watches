@@ -1,6 +1,6 @@
 SearchSource.defineSource('products', function(searchText, options) {
 
-  //console.log(options);
+  console.log(options);
 
   var filter = options ;
 
@@ -14,7 +14,9 @@ SearchSource.defineSource('products', function(searchText, options) {
   } 
   for (i=0; i<filter.type.length ; i++ )
   {
-    types.push(buildRegExp(filter.type[i]));
+    console.log(buildRegExp(filter.type[i]));
+    console.log(altRegExp(filter.type[i]));
+    types.push(altRegExp(filter.type[i]));
   } 
   for (i=0; i<filter.season.length ; i++ )
   {
@@ -42,4 +44,10 @@ function buildRegExp(searchText) {
   // this is a dumb implementation
   var parts = searchText.trim().split(/[ \-\:]+/);
   return new RegExp("(" + parts.join('|') + ")", "ig");
+}
+
+function altRegExp(searchText) {
+  // this is a dumb implementation
+  //var parts = searchText.trim().split(/[ \-\:]+/);
+  return new RegExp(searchText, "ig");
 }
