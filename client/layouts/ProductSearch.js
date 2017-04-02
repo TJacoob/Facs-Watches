@@ -13,20 +13,25 @@ var emptySeason = true ;
 PackageSearch = new SearchSource('products', fields, options);
 
 
+Template.productSearch.onCreated(function(){
+  filter.brand = distinct(Products,"brand");
+  emptyBrand = true ;
+});
+
 Template.productSearch.onRendered(function() {
     var self = this;
 
     self.autorun(function(){
         self.subscribe('products');
         self.subscribe('files.images.all');
-        filter.brand = distinct(Products,"brand");
         filter.type = distinct(Products,"type");
         filter.season = distinct(Products, "season");
-        emptyBrand = true ;
+              
         emptyType = true ;
         emptySeason = true ;
     });
     PackageSearch.search("",filter);
+    Session.set({ currentFilter: null });
 
     /* jQuery para alterar estilos da barra de navegação */
     jQuery('.jq-searchbar').click(function(){
@@ -51,21 +56,19 @@ Template.productSearch.onRendered(function() {
       jQuery('.jq-searchbar').removeClass('css-searchbar');
       
       jQuery(this).toggleClass('hvr-shutter-out-horizontal css-searchbar');*/
+
     });
+
+  if (typeof Session.get("prevBrand") !== 'undefined') 
+  {
+    $( "#showBrandFilter" ).click();
+  }; 
+
+  
 
 });
 
 Template.productSearch.helpers({
-
-	/*
-  productImage: function(){
-	  var prod = Products.findOne({_id: this.p });
-    if (typeof prod !== 'undefined')
-    {
-      console.log(Images.findOne({_id:prod.pictures}));
-      return Images.findOne({_id:prod.pictures[0]});
-    }
-	}, */
 
   productImage: function(){
     var prod = Products.findOne({_id: this.p });
@@ -291,10 +294,18 @@ Template.filterBrand.onRendered(function(){
   if ( filter.brand.length != distinct(Products,"brand").length )
   {
     for (i=0; i<filter.brand.length ; i++ )
-    {
+    {      
       document.getElementById("f-"+filter.brand[i]).checked = true;
     }
   }
+
+  if (typeof Session.get("prevBrand") !== 'undefined') 
+  {
+    let prevBrand = "#f-"+ Session.get("prevBrand"); 
+    $(prevBrand).click();
+    Session.set("prevBrand", undefined );
+  };
+
 });
 
 Template.filterType.helpers({

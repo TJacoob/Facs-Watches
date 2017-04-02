@@ -33,8 +33,8 @@ Template.index.helpers({
 
 Template.index.events({
 
-  "click #jumpSearch": function(){
-    console.log("here");
+  "click .jumpSearch": function(event){
+    Session.set("prevBrand",event.currentTarget.id);
     FlowRouter.go('/search');
   },
 
