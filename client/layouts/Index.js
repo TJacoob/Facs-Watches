@@ -9,10 +9,11 @@ Template.index.onRendered(function() {
 
 Template.index.helpers({
 
+  /*
   spotlight: function() {
       return Products.find({spotlight:true}, {limit: 3});
-      /* Should be fixed to display spotlighted only */
-	},
+      // Should be fixed to display spotlighted only
+	}, */
 
   productImage: function(){
     var prod = Products.findOne({_id: this.p });

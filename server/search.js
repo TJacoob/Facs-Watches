@@ -23,7 +23,7 @@ SearchSource.defineSource('products', function(searchText, options) {
     seasons.push((filter.season[i]));
   } 
 
-  var options = {sort: {isoScore: -1}, limit: 20};
+  var options = {sort: {isoScore: -1}, limit: 100};
   
   if(searchText) {
 

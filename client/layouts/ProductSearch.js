@@ -307,6 +307,7 @@ Template.filterBrand.onRendered(function(){
   {
     let prevBrand = "#f-"+ Session.get("prevBrand"); 
     $(prevBrand).click();
+    $(prevBrand).prop("checked", true);
     Session.set("prevBrand", undefined );
   };
 

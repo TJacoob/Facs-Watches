@@ -76,11 +76,11 @@ ProductsSchema = new SimpleSchema({
 		type: Boolean,
 		label: "Projeto Pessoal",
 	},
-	available: {
+	/* available: {
 		type: Boolean,
 		label: "Disponível" ,
 		//defaultValue: true ,
-	},
+	}, */
 	pictures: {
   		type: [PictureLink],
   	},
