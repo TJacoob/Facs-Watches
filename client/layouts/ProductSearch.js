@@ -305,7 +305,7 @@ Template.filterBrand.onRendered(function(){
 
   if (typeof Session.get("prevBrand") !== 'undefined') 
   {
-    let prevBrand = "#f-"+ Session.get("prevBrand"); 
+    let prevBrand = "[id='f-"+ Session.get("prevBrand") + "']"; 
     $(prevBrand).click();
     Session.set("prevBrand", undefined );
   };
