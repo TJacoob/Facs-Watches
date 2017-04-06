@@ -11,6 +11,7 @@
 	"index-brands": "I nostri marchi",
 	"index-aboutus": "Riguardo a noi",
 	"index-aboutus-long": "About us Italiano",
+	"index-aboutus-end": "About us Ital",
 	"index-contacts": "Mettetevi in contatto con noi",
 
 	//Search Page
@@ -21,7 +22,8 @@
 	"search-personalproject":"(Progetto Personale)",
 
 	//Special Products Page
-	"special-about": "Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.",
+	"special-about-1": "Pode ser-se: jovem, irreverente, iconoclasta e contemporaneamente admirador da tradição, cultor da qualidade e amante do belo? Pode!",
+	"special-about-2": "FACS, relógios únicos.",
 
 	//Multireferenced
 	"productcard-seemore": "Vedi ulteriori informazioni",

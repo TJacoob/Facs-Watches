@@ -1,18 +1,18 @@
 {
 	//Navbar
 	"nav-search": "Pesquisar" ,
-	"nav-personalprojects": "Projetos Pessoais",
+	"nav-personalprojects": "FACS by FACS",
 	"nav-about": "Sobre nós",
 	"nav-contacts": "Contactos",
 
 	//Index Page
 	"index-spotlight": "Peças em destaque",
 	"index-seeallprocucts": "Ver todos os nossos produtos",
-	"index-brands": "As nossas marcas",
+	"index-brands": "Marcas",
 	"index-aboutus": "A paixão pela mecânica de precisão.",
 	"index-aboutus-long": "O prazer de possuir um raro instrumento medidor do tempo. O culto da diferença e a capacidade de nos projectarmos através de objectos excepcionais. A possibilidade de os usar e com eles partilhar os segundos mais notáveis.\nA consciência da individualidade e o gosto pela sua afirmação.",
 	"index-aboutus-end": "Para quem vê na procura pela excelência um extraordinário modo de vida.",
-	"index-contacts": "Entre em contacto connosco",
+	"index-contacts": "Contactos",
 
 	//Search Page
 	"search-filterby": "Filtrar por:",
@@ -22,7 +22,8 @@
 	"search-personalproject":"(Projeto Pessoal)",
 
 	//Special Products Page
-	"special-about": "Bacon ipsum dolor amet burgdoggen frankfurter tri-tip, short loin drumstick strip steak filet mignon pork chop beef ribs andouille alcatra salami sirloin biltong. Chicken flank frankfurter pastrami. Tongue pig chicken leberkas shoulder filet mignon pancetta pastrami burgdoggen doner. Shank strip steak beef kielbasa tri-tip swine sausage. Flank pork loin beef ribs, tongue prosciutto alcatra pork belly kielbasa. Flank ham hock filet mignon bresaola pancetta cow pork.",
+	"special-about-1": "Pode ser-se: jovem, irreverente, iconoclasta e contemporaneamente admirador da tradição, cultor da qualidade e amante do belo? Pode!",
+	"special-about-2": "FACS, relógios únicos.",
 
 	//Multireferenced
 	"productcard-seemore": "Ver mais informação",
