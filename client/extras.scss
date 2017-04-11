@@ -141,7 +141,7 @@
     height: auto ;
     background-color: transparent;
     //background-color: rgba(28,28,28,0.7) ;
-    border-bottom: 0.2em solid #ffcb00 ;
+    border-bottom: 0.2em solid #173e43 ;
     position: fixed;
     top: 0;
     color: white ;
@@ -202,13 +202,13 @@
 #back0
 {
     background-image: url("/back0.jpg");
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("/back0.jpg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 100%), url("/back0.jpg");
 }
 
 #back2
 {
     background-image: url("/back2.jpg");
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("/back2.jpg");
+    background-image: linear-gradient(to bottom, rgba(23, 62, 67,0.6) 0%,rgba(23, 62, 67,0.6) 100%), url("/back2.jpg");
 }
 
 #back3
@@ -329,8 +329,8 @@
 /* Shutter Out Horizontal */
 .css-searchbar
 {
-  color: #1c1c1c ;
-  background: #ffcb00 ;
+  color: white ;
+  background: #173e43 ;
   cursor:pointer;
 }
 .hvr-shutter-out-horizontal{
@@ -355,7 +355,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #ffcb00 ;
+  background: #173e43 ;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
@@ -368,7 +368,7 @@
   transition-timing-function: ease-out;
 }
 .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
-  color: #1c1c1c ;
+  color: white ;
   background: rgba(28,28,28,0.7) ;
 }
 .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
