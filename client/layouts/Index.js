@@ -3,7 +3,7 @@ Template.index.onRendered(function() {
 
     self.autorun(function(){
         self.subscribe('products');
-        self.subscribe('files.images.all');
+        //self.subscribe('files.images.all');
     });
 });
 
